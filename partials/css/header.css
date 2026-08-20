@@ -1,0 +1,82 @@
+header {
+    background: var(--fundo);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo img {
+    width: 8vw;
+    height: auto;
+}
+
+.header-list {
+    font-size: 1.2rem;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--btn-secundary);
+  transition: 0.3s;
+}
+
+.verde:hover {
+    color: var(--secundary);
+    transition: 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+.btn-header {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.btn-login {
+    background: linear-gradient(60deg, var(--btn-primary), var(--secundary));
+    padding: 7px 15px;
+    border-radius: 6px;
+}
+
+.btn-login a,
+.btn-cadastrar a {
+    color: var(--txt-btn);
+}
+
+.btn-cadastrar {
+    background: linear-gradient(45deg, var(--btn-secundary), var(--primary));
+    padding: 7px 15px;
+    border-radius: 6px;
+}

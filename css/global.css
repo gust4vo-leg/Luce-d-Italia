@@ -1,0 +1,16 @@
+:root {
+    --primary: #bd0e0e;
+    --secundary: #1b8117;
+    --terciary: #ffffff;
+    --texto: #000000;
+    --fundo: #f5ebcabe;
+    --btn-primary: #074905;
+    --btn-secundary: #660b0b;
+    --txt-btn: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
