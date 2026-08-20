@@ -1,28 +1,28 @@
 header {
-    background: var(--fundo);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px 0;
+  background: var(--beige);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .logo img {
-    width: 8vw;
-    height: auto;
+  width: 8vw;
+  height: auto;
 }
 
 .header-list {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
+  display: flex;
+  list-style: none;
+  gap: 30px;
 }
 
 .menu {
@@ -32,13 +32,13 @@ a {
 }
 
 .menu a {
-  color: var(--texto);
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
   position: relative;
 }
 
-.menu a::after {
+.sobre::after {
   content: "";
   position: absolute;
   left: 0;
@@ -49,34 +49,75 @@ a {
   transition: 0.3s;
 }
 
+.verde::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--secundary);
+  transition: 0.3s;
+}
+
 .verde:hover {
-    color: var(--secundary);
-    transition: 0.3s ease;
+  color: var(--green-light);
+  transition: 0.3s ease;
+}
+
+.branco::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--terciary);
+  transition: 0.3s;
+}
+
+.branco:hover {
+    color: whitesmoke;
+}
+
+.vermelho::after {
+    content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+.vermelho:hover {
+    color: var(--primary);
 }
 
 .menu a:hover::after {
   width: 100%;
 }
 .btn-header {
-    display: flex;
-    gap: 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .btn-login {
-    background: linear-gradient(60deg, var(--btn-primary), var(--secundary));
-    padding: 7px 15px;
-    border-radius: 6px;
+  background: linear-gradient(60deg, var(--btn-primary), var(--green-light));
+  padding: 7px 15px;
+  border-radius: 6px;
 }
 
 .btn-login a,
 .btn-cadastrar a {
-    color: var(--txt-btn);
+  color: var(--txt-btn);
 }
 
 .btn-cadastrar {
-    background: linear-gradient(45deg, var(--btn-secundary), var(--primary));
-    padding: 7px 15px;
-    border-radius: 6px;
+  background: linear-gradient(45deg, var(--btn-secundary), var(--wine));
+  padding: 7px 15px;
+  border-radius: 6px;
 }
