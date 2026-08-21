@@ -1,22 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 header {
-  background: var(--beige);
+  background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 10px 0;
+  font-family: 'Cinzel', serif;
+  height: 15vh;
 }
 
 a {
   text-decoration: none;
 }
 
+.top-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: var(--txt-btn);
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: .7rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.green {
+  padding: 4px;
+  background: var(--btn-primary);
+}
+
+.red {
+  padding: 4px;
+  background: var(--wine);
+}
+
+.creme img {
+  width: 3vw;
+}
+
 .logo img {
-  width: 8vw;
+  position: absolute;
+  width: 20vw;
   height: auto;
+  top: 4%;
+  left: 10%;
+}
+
+header nav {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
 }
 
 .header-list {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .menu {
@@ -34,7 +72,7 @@ a {
 .menu a {
   color: var(--text);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
 }
 
@@ -45,7 +83,7 @@ a {
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background: var(--btn-secundary);
+  background: var(--gold);
   transition: 0.3s;
 }
 
@@ -65,23 +103,8 @@ a {
   transition: 0.3s ease;
 }
 
-.branco::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: var(--terciary);
-  transition: 0.3s;
-}
-
-.branco:hover {
-    color: whitesmoke;
-}
-
 .vermelho::after {
-    content: "";
+  content: "";
   position: absolute;
   left: 0;
   bottom: -5px;
@@ -92,32 +115,41 @@ a {
 }
 
 .vermelho:hover {
-    color: var(--primary);
+  color: var(--primary);
+}
+
+.branco::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--bronze);
+  transition: 0.3s;
+}
+
+.branco:hover {
+  color: var(--gold);
 }
 
 .menu a:hover::after {
   width: 100%;
 }
+
 .btn-header {
   display: flex;
   gap: 20px;
-  font-size: 1.2rem;
+  font-size: .8rem;
   font-weight: 500;
 }
 
 .btn-login {
-  background: linear-gradient(60deg, var(--btn-primary), var(--green-light));
+  background: var(--wine);
   padding: 7px 15px;
   border-radius: 6px;
 }
 
-.btn-login a,
-.btn-cadastrar a {
+.btn-login a {
   color: var(--txt-btn);
-}
-
-.btn-cadastrar {
-  background: linear-gradient(45deg, var(--btn-secundary), var(--wine));
-  padding: 7px 15px;
-  border-radius: 6px;
 }
