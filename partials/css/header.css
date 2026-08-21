@@ -153,3 +153,7 @@ header nav {
 .btn-login a {
   color: var(--txt-btn);
 }
+
+.btn-login:hover {
+  background: var(--primary);
+}
