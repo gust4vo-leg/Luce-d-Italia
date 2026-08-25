@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    background: var(--cream);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#hero {
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.hero {
+    display: flex;
+    position: relative;
+}
+
+.hero-left {
+    width: 46%;
+    padding: 120px 0 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-txt h1 {
+    margin: 0;
+    max-width: 500px;
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text);
+}
+
+.hero-txt h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.detail-img-hero {
+    margin: 10px 0 15px;
+}
+
+.detail-img-hero img {
+    width: 85px;
+    height: auto;
+}
+
+.details-txt-hero {
+    max-width: 400px;
+}
+
+.details-txt-hero p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #494949;
+}
+
+.btn-hero {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.reserva,
+.cardapio {
+    height: 48px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.reserva {
+    background: var(--green);
+    color: white;
+    border-radius: 6px;
+}
+
+.reserva:hover {
+    background: var(--secundary);
+}
+
+.cardapio {
+    border: 1px solid var(--wine);
+    color: #7d2b23;
+    border-radius: 6px;
+}
+
+.cardapio:hover {
+    background: var(--wine);
+    color: var(--terciary);
+}
+
+.reserva i,
+.cardapio i {
+    font-size: 1.1rem;
+}
+
+.hero-right {
+    width: 54%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.imagem {
+    width: 100%;
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image:
+        linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.15) 8%,
+            rgba(0, 0, 0, 0.6) 15%,
+            black 25%,
+            black 100%);
+
+    mask-image:
+        linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.15) 8%,
+            rgba(0, 0, 0, 0.6) 15%,
+            black 25%,
+            black 100%);
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}

@@ -1,159 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-header {
-  background: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px 0;
-  font-family: 'Cinzel', serif;
-  height: 15vh;
-}
-
-a {
-  text-decoration: none;
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .top-header {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  color: var(--txt-btn);
-  text-align: center;
-  font-family: 'Cinzel', serif;
-  font-size: .7rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.green {
-  padding: 4px;
-  background: var(--btn-primary);
-}
-
-.red {
-  padding: 4px;
-  background: var(--wine);
-}
-
-.creme img {
-  width: 3vw;
-}
-
-.logo img {
-  position: absolute;
-  width: 20vw;
-  height: auto;
-  top: 4%;
-  left: 10%;
-}
-
-header nav {
+  height: 30px;
   display: flex;
-  gap: 5rem;
-  align-items: center;
-}
-
-.header-list {
-  font-size: 1rem;
-}
-
-.menu {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.menu a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
-}
-
-.sobre::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: var(--gold);
-  transition: 0.3s;
-}
-
-.verde::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: var(--secundary);
-  transition: 0.3s;
-}
-
-.verde:hover {
-  color: var(--green-light);
-  transition: 0.3s ease;
-}
-
-.vermelho::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: var(--primary);
-  transition: 0.3s;
-}
-
-.vermelho:hover {
-  color: var(--primary);
-}
-
-.branco::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: var(--bronze);
-  transition: 0.3s;
-}
-
-.branco:hover {
-  color: var(--gold);
-}
-
-.menu a:hover::after {
   width: 100%;
 }
 
-.btn-header {
+.green,
+.creme,
+.red {
   display: flex;
-  gap: 20px;
-  font-size: .8rem;
-  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  color: var(--terciary);
 }
 
-.btn-login {
-  background: var(--wine);
-  padding: 7px 15px;
-  border-radius: 6px;
+.green {
+  width: 33%;
+  background: var(--secundary);
 }
 
-.btn-login a {
-  color: var(--txt-btn);
+.green p {
+  margin: 0;
 }
 
-.btn-login:hover {
+.creme {
+  width: 34%;
+  background: var(--cream);
+}
+
+.creme img {
+  width: 70px;
+}
+
+.red {
+  width: 33%;
   background: var(--primary);
+}
+
+header {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 6%;
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 6%;
+  z-index: 5;
+}
+
+.logo img {
+  width: 17vw;
+  display: block;
+}
+
+.header-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 35px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: var(--primary);
+}
+
+.menu li a.verde {
+  color: var(--primary);
+}
+
+.btn-header a {
+  background: var(--primary);
+  color: var(--terciary);
+  text-decoration: none;
+  height: 45px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-header a:hover {
+  background: var(--btn-secundary);
+}
+
+.btn-header i {
+  font-size: 1.2rem;
+}
+
+.btn-header p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
 }

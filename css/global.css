@@ -1,8 +1,8 @@
 :root {
     --primary: #A51C24;
-    --secundary: #2F5D3A;
+    --secundary: #0f5f22;
     --terciary: #FFFFFF;
-    --btn-primary: #1E4A2B;
+    --btn-primary: #116e2d;
     --btn-secundary: #8B1E23;
     --txt-btn: #FFFFFF;
     --cream: #F8F1E3;
@@ -12,8 +12,9 @@
     --wine: #741C1C;
     --brown: #5C3A20;
     --gold: #B08A52;
+    --border-color: #bd8f4a46;
     --bronze: #936839;
-    --text: #2A211B;
+    --text: #292929;
 }
 
 * {

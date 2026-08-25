@@ -1,132 +1,129 @@
 footer {
-    margin-top: 10px;
     width: 100%;
     background: var(--cream);
     color: var(--text);
+    font-family: "Lora", serif;
+    border-top: 4px solid var(--primary);
 }
 
 .footer-main {
     width: 100%;
-    min-height: 480px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 70px 60px 60px;
     display: grid;
-    grid-template-columns:
-        1.2fr 1fr 1.15fr .9fr;
-    align-items: center;
-    padding: 45px 6% 40px;
-    position: relative;
-    border-top: .5rem solid var(--primary);
+    grid-template-columns: 1.4fr 1fr 1.2fr 0.8fr;
+    gap: 55px;
 }
 
-.left,
-.main-footer,
-.atendimento,
-.social-footer {
-    height: 100%;
+.footer-main .left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
 }
 
-.main-footer,
-.atendimento,
-.social-footer {
-    border-left: 2px solid rgba(176, 138, 82, .18);
-}
-
-.left {
-    text-align: center;
-    padding-right: 45px;
+.logo-footer {
+    margin-bottom: 20px;
 }
 
 .logo-footer img {
-    width: 230px;
-    max-width: 100%;
+    width: 10vw;
     height: auto;
+    display: block;
 }
 
 .detalhe-insp {
-    margin-top: 20px;
-    font-family: Georgia, serif;
-    font-size: 18px;
-    line-height: 1.35;
-    color: var(--brown);
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    line-height: 1.3;
+    font-style: italic;
+    margin-bottom: 18px;
 }
 
 .detalhe-insp span {
-    color: var(--wine);
-    font-weight: bold;
+    color: var(--gold);
 }
 
 .borda-footer {
-    margin: 12px auto 15px;
+    width: 180px;
+    margin: 5px 0 22px;
 }
 
 .borda-footer img {
-    width: 190px;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -35px;
+    margin-bottom: -35px;
 }
 
 .txt-footer-left {
-    max-width: 300px;
-    margin: 0 auto;
-    font-size: 15px;
-    line-height: 1.6;
-    text-align: center;
+    max-width: 330px;
     color: var(--text);
+    font-family: "Lora", serif;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-.navegacao,
-.atendimento,
-.social-footer {
-    padding-left: 50px;
-    padding-right: 35px;
-}
-
-.navegacao h2,
+.main-footer h2,
 .atendimento h2,
 .social-footer h2 {
-    font-family: Georgia, serif;
-    font-size: 23px;
-    color: var(--primary);
-    text-align: left;
+    position: relative;
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
     margin-bottom: 8px;
-    letter-spacing: .5px;
 }
 
 .ornamento {
     width: 75px;
     height: auto;
-
-    margin-bottom: 20px;
+    display: block;
+    margin-bottom: 22px;
 }
 
 .navegacao ul {
     list-style: none;
+
     display: flex;
     flex-direction: column;
-    gap: 17px;
+    gap: 13px;
 }
 
-.navegacao li a {
+.navegacao li {
+    width: fit-content;
+}
+
+.navegacao a {
     display: flex;
     align-items: center;
-    gap: 14px;
-    text-decoration: none;
+    gap: 12px;
     color: var(--text);
-    font-size: 16px;
-    transition: .2s ease;
+    text-decoration: none;
+    font-family: "Lora", serif;
+    font-size: 14px;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.navegacao li a:hover {
+.navegacao a i {
+    width: 18px;
+    color: var(--gold);
+    font-size: 15px;
+    transition: color 0.25s ease;
+}
+
+.navegacao a:hover {
+    color: var(--text);
+    transform: translateX(5px);
+}
+
+.navegacao a:hover i {
     color: var(--primary);
-    transform: translateX(4px);
-}
-
-.navegacao li i {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    color: var(--green);
 }
 
 .atendimento-lista {
@@ -138,145 +135,139 @@ footer {
 .info-item {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
-    font-size: 15px;
-    line-height: 1.5;
+    gap: 13px;
+    color: var(--text);
+    font-family: "Lora", serif;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 .info-item i {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-    flex-shrink: 0;
-    color: var(--green);
+    min-width: 18px;
+    margin-top: 3px;
+    color: var(--gold);
+    font-size: 15px;
 }
 
 .info-item strong {
-    color: var(--green);
+    color: var(--text);
+    font-weight: 600;
 }
 
 .reserva-footer {
-    margin-top: 25px;
-    min-height: 75px;
-    padding: 12px 18px;
-    border: 2px solid var(--gold);
-    border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 13px;
+    margin-top: 28px;
+    padding: 15px 18px;
+    background: var(--wine);
+    border: 1px solid rgba(176, 138, 82, 0.35);
+    border-radius: 3px;
+    color: var(--cream);
     text-decoration: none;
-    color: var(--text);
-    transition: .25s ease;
-}
-
-.reserva-footer:hover {
-    background: rgba(176, 138, 82, .08);
+    font-family: "Lora", serif;
+    font-size: 13px;
+    line-height: 1.5;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .reserva-footer i {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
     color: var(--gold);
-}
-
-.reserva-footer span {
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 23px;
 }
 
 .reserva-footer strong {
-    color: var(--primary);
+    color: var(--gold);
+}
+
+.reserva-footer:hover {
+    background: var(--primary);
+    border-color: var(--gold);
+    transform: translateY(-2px);
 }
 
 .social-lista {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
 }
 
 .social-lista a {
     display: flex;
     align-items: center;
-    gap: 14px;
-    text-decoration: none;
+    gap: 13px;
     color: var(--text);
-    font-size: 16px;
-    transition: .2s ease;
+    text-decoration: none;
+    font-family: "Lora", serif;
+    font-size: 14px;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.social-lista a i {
+    width: 20px;
+    color: var(--gold);
+    font-size: 18px;
+    transition: color 0.25s ease;
 }
 
 .social-lista a:hover {
-    color: var(--primary);
-    transform: translateX(4px);
+    color: var(--text);
+    transform: translateX(5px);
 }
 
-.social-lista i {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    color: var(--wine);
+.social-lista a:hover i {
+    color: var(--primary);
 }
 
 .footer-bottom {
-    width: 100%;
-    min-height: 110px;
-    background: var(--primary);
-    color: var(--cream);
-    display: grid;
-    grid-template-columns:
-        1fr 1.2fr .7fr 1.5fr 1fr;
-    align-items: center;
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    min-height: 75px;
+    padding: 18px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--wine);
+    border-top: 1px solid var(--border-color);
 }
 
 .copyright {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    gap: 4px;
     text-align: center;
-    font-family: Georgia, serif;
-    font-size: 16px;
-    padding: 20px;
-    border-right: 2px solid rgba(176, 138, 82, .3);
+    color: rgba(248, 241, 227, 0.75);
+    font-family: "Lora", serif;
+    font-size: 12px;
 }
 
-.footer-center {
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 2px solid rgba(176, 138, 82, .3);
-}
-
-.footer-center img {
-    width: 100px;
-    max-width: 80%;
-    height: auto;
+.copyright span:first-child {
+    color: var(--cream);
+    font-weight: 600;
 }
 
 .footer-decoration {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
 }
 
 .footer-decoration img {
-    width: 180px;
+    max-width: 150px;
     height: auto;
 }
 
 .left-decoration {
-    justify-content: flex-start;
+    left: 60px;
 }
 
 .right-decoration {
-    justify-content: flex-end;
-}
-
-.right-decoration img {
-    width: 190px;
+    right: 60px;
 }
