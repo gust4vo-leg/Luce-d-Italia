@@ -227,47 +227,92 @@ footer {
 .footer-bottom {
     position: relative;
     width: 100%;
-    min-height: 75px;
-    padding: 18px 60px;
+    min-height: 110px;
+    padding: 15px 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: var(--wine);
-    border-top: 1px solid var(--border-color);
+    overflow: visible;
 }
 
 .copyright {
+    position: absolute;
+    left: 51.5%;
+    top: 80%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     text-align: center;
     color: rgba(248, 241, 227, 0.75);
     font-family: "Lora", serif;
     font-size: 12px;
+    z-index: 2;
 }
 
 .copyright span:first-child {
-    color: var(--cream);
-    font-weight: 600;
-}
-
-.footer-decoration {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.7;
-}
-
-.footer-decoration img {
-    max-width: 150px;
-    height: auto;
+    color: var(--border-colortxt-details-color);
+    font-weight: 500;
 }
 
 .left-decoration {
-    left: 60px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0.65;
+    pointer-events: none;
+    width: 280px;
+    left: 0;
+}
+
+.footer-decoration img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .right-decoration {
-    right: 60px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0.65;
+    pointer-events: none;
+    width: 280px;
+    right: 0;
+}
+
+.footer-center {
+    position: absolute;
+    right: 45%;
+    top: 35%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.footer-center img {
+    width: 7vw;
+    height: auto;
+    margin-bottom: -5px;
+}
+
+.footer-center-pratos {
+    position: relative;
+    padding: 0 18px;
+    border-left: 1px solid var(--gold);
+    border-right: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-center-pratos img {
+    display: block;
+    width: 85px;
+    height: auto;
 }
