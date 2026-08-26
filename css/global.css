@@ -1,24 +1,68 @@
 :root {
     --primary: #A51C24;
+    --primary-dark: #7d151b;
     --secundary: #0f5f22;
     --terciary: #FFFFFF;
+
     --btn-primary: #116e2d;
     --btn-secundary: #8B1E23;
     --txt-btn: #FFFFFF;
+
     --cream: #F8F1E3;
+    --cream-soft: #FCF6EC;
     --beige: #EFE3CC;
+
     --green: #173B25;
     --green-light: #315F3D;
     --wine: #741C1C;
+    --wine-soft: #5a1216;
     --brown: #5C3A20;
     --gold: #B08A52;
-    --txt-details-color: #e9e0d26b;
+    --gold-soft: #d4af37;
     --bronze: #936839;
+    --border-gold: #b08a5260;
+
     --text: #292929;
+    --text-muted: #555555;
+    --text-soft: #4a4a4a;
+    --border-soft: rgba(0, 0, 0, 0.08);
+    --txt-details-color: rgba(248, 241, 227, 0.75);
+
+    --font-display: 'Cinzel', serif;
+    --font-serif: Georgia, 'Cormorant Garamond', serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Lora', serif;
+    --font-sans: 'Montserrat', sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid var(--gold-soft);
+    outline-offset: 3px;
 }

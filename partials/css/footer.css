@@ -160,10 +160,10 @@ footer {
     gap: 13px;
     margin-top: 28px;
     padding: 15px 18px;
-    background: var(--wine);
-    border: 1px solid rgba(176, 138, 82, 0.35);
+    background: var(--cream);
+    border: 1px solid var(--gold);
     border-radius: 3px;
-    color: var(--cream);
+    color: var(--text);
     text-decoration: none;
     font-family: "Lora", serif;
     font-size: 13px;
@@ -175,16 +175,19 @@ footer {
 }
 
 .reserva-footer i {
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    padding: 1px 5px;
     color: var(--gold);
     font-size: 23px;
 }
 
 .reserva-footer strong {
-    color: var(--gold);
+    color: var(--wine);
 }
 
 .reserva-footer:hover {
-    background: var(--primary);
+    background: var(--beige);
     border-color: var(--gold);
     transform: translateY(-2px);
 }
