@@ -24,6 +24,6 @@ foto_prato Varchar(1000)
 
 CREATE TABLE estoques { 
 id_estoques INT PRIMARY KEY,
-nome_produtos VARCHAR(100),
+nome_ingredientes VARCHAR(100),
 num_ingrediente NUMBER
 }
