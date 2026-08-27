@@ -1,0 +1,194 @@
+body {
+    background: var(--cream);
+}
+
+#cardapio {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-centro {
+    width: 46%;
+    padding: 100px 0 64px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-txt h1 {
+    margin: 0;
+    max-width: 700px;
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--wine);
+    text-align: center;
+}
+
+.hero-bordar-txt {
+    display: flex;
+    margin-top: -45px;
+    margin-right: 13px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-bordar-txt img {
+    width: 14vw;
+}
+
+.details-txt-hero {
+    display: flex;
+    text-align: center;
+    width: 20vw;
+    margin: -20px auto;
+}
+
+.details-txt-hero strong {
+    color: var(--wine);
+    font-style: italic;
+}
+
+.divisao-hero {
+    border-bottom: 1px solid var(--border-gold-trans);
+    padding: 10px 0;
+    width: 7vw;
+    margin: 2rem auto 0;
+}
+
+/* FIILTROS */
+
+.filtros-container {
+    display: flex;
+    justify-content: center;
+}
+
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+.group-filtros a {
+    display: flex;
+    gap: 10px;
+    color: var(--secundary);
+    text-decoration: none;
+}
+
+.comidas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pad: 20px 0;
+}
+
+.cardapio {
+    padding: 20px;
+}
+
+.card-cardapio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.title-cardapio {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.title-cardapio h1 {
+    color: var(--green-light);
+    font-family: var(--font-serif);
+}
+
+.linha-decorativa {
+    position: relative;
+    flex-grow: 1;
+    max-width: 10vw;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+.linha-decorativa::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--gold);
+    transform: rotate(45deg);
+}
+
+.linha-decorativa.esquerda::after {
+    right: 0;
+}
+
+.linha-decorativa.direita::after {
+    left: 0;
+}
+
+.img-prato {
+    width: 17vw;
+    height: auto;
+}
+
+.img-prato img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.detalhes-comida {
+    background: transparent;
+    border-bottom: 1px solid var(--border-gold);
+    border-left: 1px solid var(--border-gold);
+    border-right: 1px solid var(--border-gold);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.titulo-comida {
+    font-family: var(--font-display);
+    color: var(--green-light);
+    font-size: .9rem;
+}
+
+.descricao-comida {
+    width: 13vw;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.preco-comida {
+    color: var(--wine);
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+.borda-card-comida img {
+    width: 5vw;
+    margin-top: -12px;
+}
