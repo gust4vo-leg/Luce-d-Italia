@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+/* Não mecher aqui */
+.master {
+    display: flex;
+    gap: 12%;
+    align-items: center;
+
+}
+
+.center-text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.form-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--font-display);
+    font-weight: 400;
+}
+
+.form-text h1 {
+    font-size: 50px;
+}
+
+.form-text p {
+    font-size: 20px;
+}
+
+.quebra-linha {
+    display: block;
+}
+
+.input-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.img-cadastro img {
+    height: 95%;
+
+}
+
+.input-cadastro input {
+    outline: none;
+    padding: 15px;
+    height: 48px;
+    width: 400px;
+    border-radius: 8px;
+    border: 1px solid hsla(0, 0%, 88%, 0.877);
+}
+
+.input-cadastro input:focus {
+    border: 1px solid var(--wine);
+}
+
+.check-cadastro {
+    cursor: pointer;
+    display: flex;
+    font-family: var(--font-serif);
+    gap: 7px;
+}
+.check-cadastro p {
+    font-family: var(--font-serif);
+
+}
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.button-cadastro {
+    border: none;
+    background-color: var(--green);
+    border-radius: 10px;
+    color: white;
+    padding: 17px;
+} 
+
+.button-login {
+    border: none;
+    background-color: var(--green);
+    border-radius: 10px;
+    color: white;
+    padding: 17px;
+    width: 400px;
+} 
+
+.button-login:hover {
+    background-color: var(--green-light);
+}
+
+.span-color2 {
+    color: #921e1e;
+}
+
+.check-op {
+    display: flex;
+    gap: 140px;
+}
+
+form p {
+    cursor: pointer;
+}
