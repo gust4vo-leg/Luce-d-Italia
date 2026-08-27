@@ -2,9 +2,10 @@ use db_luce;
 
 CREATE TABLE usuarios {
 id_user AUTO_INCREMENT INT PRIMARY KEY,
-nome_completo VARCHAR(100),
+nome VARCHAR(100),
 email VARCHAR(100),
 senha VARCHAR(100),
+tipo ENUM('cliente', 'admin') DEFAULT 'cliente',
 cpf NUMBER
 }
 
@@ -24,7 +25,8 @@ categoria VARCHAR(100)
 }
 
 CREATE TABLE estoques { 
-id_estoques AUTO_INCREMENT INT PRIMARY KEY,
+id_ingrediente AUTO_INCREMENT INT PRIMARY KEY,
 nome_ingredientes VARCHAR(100),
-num_ingrediente NUMBER
+num_ingrediente NUMBER,
+preco NUMBER
 }

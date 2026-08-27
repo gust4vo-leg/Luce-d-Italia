@@ -12,10 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $user = read(
-        $pdo,
-        'users',
-        "email = '$email' AND senha = '$senha'"
+    $user = read($pdo, 'users', "email = '$email' AND senha = '$senha'"
     );
 
     if ($user) {
@@ -44,3 +41,28 @@ $add = [
 ];
 
 create($pdo, 'estoque', $add);
+
+
+// Fução de adiconar e subtrair no estoque
+
+$id = $_POST['id'] ?? 0;
+$acao = $_POST ?? '';
+
+if ($id > 0) {
+    if($acao === 'somar') {
+        update($pdo, 'estoque', 'qtd_ingredientes = qtd_ingredientes + 1', 'id_ingredientes ='. $id);
+    } elseif ($acao === 'subtrair'){
+        update($pdo, 'estoque', 'qtd_ingredientes = qtd_ingredientes - 1', 'id_ingredientes ='. $id);
+    }
+}
+?>
+<form action="" method="POST">
+    <input type="hidden" name="id" value="'.$ingrediente['id_ingrediente'].'">
+    <input type="hidden" name="somar" value="somar">
+    <button type="submit">+</button>
+</form>
+<form action="" method="POST">
+    <input type="hidden" name="id" value="'.$ingrediente['id_ingrediente'].'">
+    <input type="hidden" name="subtrair" value="subtrair">
+    <button type="submit">+</button>
+</form>
