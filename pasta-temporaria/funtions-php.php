@@ -34,3 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 }
+
+
+// Fução de Adição de produto em estoque
+
+$add = [
+    'nome_ingrediente' => $_POST['nome'],
+    'qtd_ingrediente' => $_POST['qtd']
+];
+
+create($pdo, 'estoque', $add);
