@@ -16,6 +16,11 @@ body {
 
 }
 
+.img-cadastro img {
+    height: 100vh;
+    width: auto;
+}
+
 .center-text {
     display: flex;
     flex-direction: column;
@@ -58,11 +63,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 18px;
-}
-
-.img-cadastro img {
-    height: 95%;
-
 }
 
 .input-cadastro input {
