@@ -42,7 +42,7 @@ $categorias = [
           <div class="hero-txt">
             <h1>CARDÁPIO</h1>
             <div class="hero-bordar-txt">
-              <img src="../imagens/barraFooter.png" alt="Ornamento" />
+              <img src="imagens/barraFooter.png" alt="Ornamento" />
             </div>
 
             <div class="details-txt-hero">
