@@ -55,7 +55,7 @@ $categorias = [
 
         </div>
         <div class="hero-right">
-          <img src="./imagens/imgHero.png">
+          <img src="imagens/imgHero.png">
         </div>
       </div>
       
