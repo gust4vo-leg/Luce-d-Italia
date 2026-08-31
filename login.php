@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     </div>
                     <button class="button-login">Entrar</button>
-                    <p>Não tem uma conta? <a href="cadastro.html" class="span-color2">Cadastre-se</a></p>
+                    <p>Não tem uma conta? <a href="cadastro.php" class="span-color2">Cadastre-se</a></p>
                 </form>
                 
             
