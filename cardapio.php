@@ -1,4 +1,14 @@
-<?php 
+<?php
+require_once 'crud.php';
+
+$categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
+
+$pratos = readAll($pdo, 'pratos');
+
+$categorias = [
+    'entradas' => 'entradas',
+    'massas' => 'massas'
+]
 
 ?>
 
@@ -9,9 +19,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cardápio - Luce D'Italia</title>
-  <link rel="stylesheet" href="../partials/css/header.css" />
-  <link rel="stylesheet" href="../partials/css/footer.css" />
-  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="./partials/css/header.css" />
+  <link rel="stylesheet" href="./partials/css/footer.css" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/cardapio.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
@@ -44,7 +55,7 @@
 
         </div>
         <div class="hero-right">
-          <img src="../imagens/imgHero.png">
+          <img src="./imagens/imgHero.png">
         </div>
       </div>
       
@@ -110,9 +121,20 @@
           </div>
 
           <div class="card-cardapio">
+            <?php 
+              foreach ($pratos as $prato) {
+                if($prato['categoria'] === "Entradas") {
+                  print '
+                    <div class="card-comida">
+                    <div class="img-prato">
+                      <img src="'.$prato['foto_prato'].'">
+                  ';
+                }
+              }
+            ?>
             <div class="card-comida">
               <div class="img-prato">
-                <img src="../imagens/entrada.jpg">
+                <img src="./imagens/entrada.jpg">
               </div>
 
               <div class="detalhes-comida">
@@ -131,14 +153,14 @@
                 </div>
 
                 <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
+                  <img src="./imagens/barraFooter.png" alt="" />
                 </div>
               </div>
             </div>
 
             <div class="card-comida">
               <div class="img-prato">
-                <img src="../imagens/entrada.jpg">
+                <img src="./imagens/entrada.jpg">
               </div>
 
               <div class="detalhes-comida">
@@ -157,14 +179,14 @@
                 </div>
 
                 <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
+                  <img src="./imagens/barraFooter.png" alt="" />
                 </div>
               </div>
             </div>
 
             <div class="card-comida">
               <div class="img-prato">
-                <img src="../imagens/entrada.jpg">
+                <img src="./imagens/entrada.jpg">
               </div>
 
               <div class="detalhes-comida">
@@ -183,14 +205,14 @@
                 </div>
 
                 <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
+                  <img src="./imagens/barraFooter.png" alt="" />
                 </div>
               </div>
             </div>
 
             <div class="card-comida">
               <div class="img-prato">
-                <img src="../imagens/entrada.jpg">
+                <img src="./imagens/entrada.jpg">
               </div>
 
               <div class="detalhes-comida">
