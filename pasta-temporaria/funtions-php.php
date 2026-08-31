@@ -16,8 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     if ($user) {
-
-        $_SESSION['id_user'] = $user['id_user'];
         $_SESSION['nome'] = $user['nome'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['tipo'] = $user['tipo'];
