@@ -51,7 +51,7 @@
                             <span>FAZER RESERVA</span>
                         </a>
 
-                        <a class="cardapio-hero" href="#cardapio">
+                        <a class="cardapio-hero" href="cardapio.php">
                             <i class="bi bi-book"></i>
                             <span>VER CARDÁPIO</span>
                         </a>

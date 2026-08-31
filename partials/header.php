@@ -30,11 +30,11 @@ $base = "/Luce-d-Italia/"
           <li><a class="ativo" href="index.php">Início</a></li>
           <li><a href="cardapio.php">Cardápio</a></li>
           <li><a href="#reservas">Reservas</a></li>
-          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="sobreNos.html">Sobre Nós</a></li>
         </ul>
 
         <div class="btn-header">
-          <a href="#">
+          <a href="login.php">
             <i class="bi bi-person"></i>
             <p>ENTRAR</p>
           </a>
