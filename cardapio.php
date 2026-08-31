@@ -27,7 +27,7 @@ $categorias = [
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="../css/cardapio.css" />
+  <link rel="stylesheet" href="css/cardapio.css" />
 </head>
 
 <body>
@@ -42,7 +42,7 @@ $categorias = [
           <div class="hero-txt">
             <h1>CARDÁPIO</h1>
             <div class="hero-bordar-txt">
-              <img src="./imagens/barraFooter.png" alt="Ornamento" />
+              <img src="imagens/barraFooter.png" alt="Ornamento" />
             </div>
 
             <div class="details-txt-hero">
@@ -55,7 +55,7 @@ $categorias = [
 
         </div>
         <div class="hero-right">
-          <img src="./imagens/imgHero.png">
+          <img src="imagens/imgHero.png">
         </div>
       </div>
       
