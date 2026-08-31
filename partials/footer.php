@@ -1,18 +1,22 @@
+  <?php
+$base = "/Luce-d-Italia/"
+?>
+  
   <footer>
     <div class="footer-main">
       <div class="left">
         <div class="logo-footer">
-          <img src="../imagens/logo.png" alt="Luce D'Italia" />
+          <img src="<?= $base ?>imagens/logo.png" alt="Luce D'Italia" />
         </div>
 
         <div class="detalhe-insp">
           <span>Tradição, sabor e paixão</span>
-          <br />
+          <br/>
           em cada detalhe.
         </div>
 
         <div class="borda-footer">
-          <img src="../imagens/barraFooter.png" alt="Ornamento" />
+          <img src="<?= $base ?>imagens/barraFooter.png" alt="Ornamento" />
         </div>
 
         <div class="txt-footer-left">
@@ -25,7 +29,7 @@
         <nav class="navegacao">
           <h2>NAVEGAÇÃO</h2>
 
-          <img src="../imagens/ornamento.png" alt="Ornamento" class="ornamento" />
+          <img src="<?= $base ?>imagens/ornamento.png" alt="Ornamento" class="ornamento" />
 
           <ul>
             <li>
@@ -83,7 +87,7 @@
       <div class="atendimento">
         <h2>ATENDIMENTO</h2>
 
-        <img src="../imagens/ornamento.png" alt="Ornamento" class="ornamento" />
+        <img src="<?= $base ?>imagens/ornamento.png" alt="Ornamento" class="ornamento" />
 
         <div class="atendimento-lista">
           <div class="info-item">
@@ -128,7 +132,7 @@
       <div class="social-footer">
         <h2>SIGA-NOS</h2>
 
-        <img src="../imagens/ornamento.png" alt="Ornamento" class="ornamento" />
+        <img src="<?= $base ?>imagens/ornamento.png" alt="Ornamento" class="ornamento" />
 
         <div class="social-lista">
           <a href="#">
@@ -151,7 +155,7 @@
 
     <div class="footer-bottom">
       <div class="footer-decoration left-decoration">
-        <img src="../imagens/planta.png" alt="Decoração" />
+        <img src="<?= $base ?>imagens/planta.png" alt="Decoração" />
       </div>
 
       <div class="copyright">
@@ -159,14 +163,14 @@
       </div>
 
       <div class="footer-center">
-        <img src="../imagens/ornamento.png" />
+        <img src="<?= $base ?>imagens/ornamento.png" />
         <div class="footer-center-pratos">
-          <img src="../imagens/pratos.png" alt="Talheres e prato" />
+          <img src="<?= $base ?>imagens/pratos.png" alt="Talheres e prato" />
         </div>
       </div>
 
       <div class="footer-decoration right-decoration">
-        <img src="../imagens/plantaRight.png" alt="Decoração" />
+        <img src="<?= $base ?>imagens/plantaRight.png" alt="Decoração" />
       </div>
     </div>
   </footer>
