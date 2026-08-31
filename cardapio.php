@@ -119,124 +119,46 @@ $categorias = [
             <h1>ENTRADAS</h1>
             <div class="linha-decorativa direita"></div>
           </div>
-
+    
           <div class="card-cardapio">
             <?php 
               foreach ($pratos as $prato) {
                 if($prato['categoria'] === "Entradas") {
                   print '
                     <div class="card-comida">
-                    <div class="img-prato">
-                      <img src="'.$prato['foto_prato'].'">
+                      <div class="img-prato">
+                        <img src="'.$prato["foto_prato"].'">
+                      </div>
+
+                      <div class="detalhes-comida">
+                        <div class="titulo-comida">
+                          <h2>'.$prato["nome_prato"].'</h2>
+                        </div>
+
+                        <div class="descricao-comida">
+                            Massa artesanal envolvida em um molho de
+                            tomate,tomates-cereja, folhas de manjericão e azeite
+                            extravirgem.
+                        </div>
+
+                        <div class="preco-comida">
+                          <p>R$ '.$prato["preco"].'</p>
+                        </div>
+
+                        <div class="borda-card-comida">
+                          <img src="./imagens/barraFooter.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    
+
                   ';
                 }
               }
             ?>
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="./imagens/entrada.jpg">
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="./imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="./imagens/entrada.jpg">
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="./imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="./imagens/entrada.jpg">
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="./imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="./imagens/entrada.jpg">
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+
         <div class="cardapio">
           <div class="title-cardapio">
             <div class="linha-decorativa esquerda"></div>
@@ -245,111 +167,42 @@ $categorias = [
           </div>
 
           <div class="card-cardapio">
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pratoPrincipal.jpg" />
-              </div>
+            <?php 
+              foreach ($pratos as $prato) {
+                if($prato['categoria'] === "Pratos Principais") {
+                  print '
+                    <div class="card-comida">
+                      <div class="img-prato">
+                        <img src="'.$prato["foto_prato"].'">
+                      </div>
 
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
+                      <div class="detalhes-comida">
+                        <div class="titulo-comida">
+                          <h2>'.$prato["nome_prato"].'</h2>
+                        </div>
 
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
+                        <div class="descricao-comida">
+                            Massa artesanal envolvida em um molho de
+                            tomate,tomates-cereja, folhas de manjericão e azeite
+                            extravirgem.
+                        </div>
 
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
+                        <div class="preco-comida">
+                          <p>R$ '.$prato["preco"].'</p>
+                        </div>
 
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pratoPrincipal.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pratoPrincipal.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pratoPrincipal.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                        <div class="borda-card-comida">
+                          <img src="./imagens/barraFooter.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  ';
+                }
+              }
+            ?>
           </div>
         </div>
+
         <div class="cardapio">
           <div class="title-cardapio">
             <div class="linha-decorativa esquerda"></div>
@@ -358,109 +211,39 @@ $categorias = [
           </div>
 
           <div class="card-cardapio">
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/massa.jpg" />
-              </div>
+            <?php 
+              foreach ($pratos as $prato) {
+                if($prato['categoria'] === "Massas") {
+                  print '
+                    <div class="card-comida">
+                      <div class="img-prato">
+                        <img src="'.$prato["foto_prato"].'">
+                      </div>
 
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
+                      <div class="detalhes-comida">
+                        <div class="titulo-comida">
+                          <h2>'.$prato["nome_prato"].'</h2>
+                        </div>
 
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
+                        <div class="descricao-comida">
+                            Massa artesanal envolvida em um molho de
+                            tomate,tomates-cereja, folhas de manjericão e azeite
+                            extravirgem.
+                        </div>
 
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
+                        <div class="preco-comida">
+                          <p>R$ '.$prato["preco"].'</p>
+                        </div>
 
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/massa.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/massa.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/massa.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                        <div class="borda-card-comida">
+                          <img src="./imagens/barraFooter.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  ';
+                }
+              }
+            ?>
           </div>
         </div>
         <div class="cardapio">
@@ -471,109 +254,41 @@ $categorias = [
           </div>
 
           <div class="card-cardapio">
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pizza.jpg" />
-              </div>
+            <?php 
+              foreach ($pratos as $prato) {
+                if($prato['categoria'] === "Pizzas") {
+                  print '
+                    <div class="card-comida">
+                      <div class="img-prato">
+                        <img src="'.$prato["foto_prato"].'">
+                      </div>
 
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
+                      <div class="detalhes-comida">
+                        <div class="titulo-comida">
+                          <h2>'.$prato["nome_prato"].'</h2>
+                        </div>
 
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
+                        <div class="descricao-comida">
+                            Massa artesanal envolvida em um molho de
+                            tomate,tomates-cereja, folhas de manjericão e azeite
+                            extravirgem.
+                        </div>
 
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
+                        <div class="preco-comida">
+                          <p>R$ '.$prato["preco"].'</p>
+                        </div>
 
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                        <div class="borda-card-comida">
+                          <img src="./imagens/barraFooter.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    
 
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pizza.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pizza.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/pizza.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                  ';
+                }
+              }
+            ?>
           </div>
         </div>
 
@@ -585,109 +300,41 @@ $categorias = [
           </div>
 
           <div class="card-cardapio">
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/sobremesa.jpg" />
-              </div>
+            <?php 
+              foreach ($pratos as $prato) {
+                if($prato['categoria'] === "Sobremesas") {
+                  print '
+                    <div class="card-comida">
+                      <div class="img-prato">
+                        <img src="'.$prato["foto_prato"].'">
+                      </div>
 
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
+                      <div class="detalhes-comida">
+                        <div class="titulo-comida">
+                          <h2>'.$prato["nome_prato"].'</h2>
+                        </div>
 
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
+                        <div class="descricao-comida">
+                            Massa artesanal envolvida em um molho de
+                            tomate,tomates-cereja, folhas de manjericão e azeite
+                            extravirgem.
+                        </div>
 
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
+                        <div class="preco-comida">
+                          <p>R$ '.$prato["preco"].'</p>
+                        </div>
 
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                        <div class="borda-card-comida">
+                          <img src="./imagens/barraFooter.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    
 
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/sobremesa.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/sobremesa.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/sobremesa.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                  ';
+                }
+              }
+            ?>
           </div>
         </div>
         <div class="cardapio">
@@ -698,109 +345,41 @@ $categorias = [
           </div>
 
           <div class="card-cardapio">
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/bebida.jpg" />
-              </div>
+            <?php 
+              foreach ($pratos as $prato) {
+                if($prato['categoria'] === "Bebidas") {
+                  print '
+                    <div class="card-comida">
+                      <div class="img-prato">
+                        <img src="'.$prato["foto_prato"].'">
+                      </div>
 
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
+                      <div class="detalhes-comida">
+                        <div class="titulo-comida">
+                          <h2>'.$prato["nome_prato"].'</h2>
+                        </div>
 
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
+                        <div class="descricao-comida">
+                            Massa artesanal envolvida em um molho de
+                            tomate,tomates-cereja, folhas de manjericão e azeite
+                            extravirgem.
+                        </div>
 
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
+                        <div class="preco-comida">
+                          <p>R$ '.$prato["preco"].'</p>
+                        </div>
 
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                        <div class="borda-card-comida">
+                          <img src="./imagens/barraFooter.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    
 
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/bebida.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/bebida.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-comida">
-              <div class="img-prato">
-                <img src="../imagens/bebida.jpg" />
-              </div>
-
-              <div class="detalhes-comida">
-                <div class="titulo-comida">
-                  <h2>Paccheri ao pomodoro</h2>
-                </div>
-
-                <div class="descricao-comida">
-                  Massa artesanal envolvida em um molho de
-                  tomate,tomates-cereja, folhas de manjericão e azeite
-                  extravirgem.
-                </div>
-
-                <div class="preco-comida">
-                  <p>R$ 32,90</p>
-                </div>
-
-                <div class="borda-card-comida">
-                  <img src="../imagens/barraFooter.png" alt="" />
-                </div>
-              </div>
-            </div>
+                  ';
+                }
+              }
+            ?>
           </div>
         </div>
 

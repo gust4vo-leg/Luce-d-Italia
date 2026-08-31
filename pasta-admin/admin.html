@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luce`d Italia - Admin</title>
+    <link rel="stylesheet" href="../partials/css/header.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  </head>
+  <body>
+    <style>
+      .fundo {
+        background: rgba(0, 0, 0, 0.24);
+        filter: blur(2px);
+      }
+
+      .oculto {
+        display: none;
+        visibility: hidden;
+        background: black;
+      }
+
+      .visivel {
+        display: block;
+        visibility: visible;
+      }
+    </style>
+
+    <section class="header">
+      <div class="top-header">
+        <div class="green">
+          <p>TRADIÇÃO, SABOR E PAIXÃO EM CADA DETALHE</p>
+        </div>
+
+        <div class="creme">
+          <img src="../imagens/ornamento.png" alt="" role="presentation" />
+        </div>
+
+        <div class="red">BEM VINDO!</div>
+      </div>
+      <header>
+        <div class="logo">
+          <a href="#hero">
+            <img src="../imagens/logo.png" alt="Luce d'Itália" />
+          </a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="header-list"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+
+        <nav class="header-list" id="header-list">
+          <ul class="menu">
+            <li><a class="ativo" href="index.php">Início</a></li>
+            <li><a href="cardapio.php">Cardápio</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+          </ul>
+
+          <div class="btn-header">
+            <a href="#">
+              <i class="bi bi-person"></i>
+              <p>ENTRAR</p>
+            </a>
+          </div>
+        </nav>
+      </header>
+    </section>
+
+    <main id="conteudo">
+      <section id="hero">
+        <div class="hero-container">
+          <h2>PAINEL ADMINISTRATIVO</h2>
+          <h1>CONTROLE DE ESTOQUE & CARDÁPIO</h1>
+          <div class="hero-border-txt">
+            <img src="../imagens/barraFooter.png" alt="Ornamento" />
+          </div>
+        </div>
+      </section>
+
+      <section id="card-estoque">
+        <div class="estoque-container">
+          <div class="top-estoque">
+            <div class="left-top-estoque">
+              <h2>CONTROLE DE ESTOQUE</h2>
+              <img src="../imagens/ornamento.png" alt="" />
+            </div>
+
+            <div class="right-top-estoque">
+              <button type="button" id="btnAdicionar">
+                <i class="bi bi-plus-lg"></i>Adicionar ingrediente
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="modal" class="oculto modal">
+        <div class="text-modal">
+          <h2>Modal aberto</h2>
+          <p>Primeira atividade de modal</p>
+        </div>
+        <button type="button" id="fecharModal">Fechar</button>
+      </div>
+    </main>
+
+    <script>
+      const botao = document.querySelector("#btnAdicionar");
+      botao.addEventListener("click", abrirModal);
+
+      function abrirModal() {
+        const modal = document.querySelector("#modal");
+        modal.classList.remove("oculto");
+        modal.classList.add("visivel");
+
+        const outraCor = document.querySelector("main");
+        outraCor.classList.add("fundo");
+      }
+
+      const botaoFechar = document.querySelector("#fecharModal");
+      botaoFechar.addEventListener("click", fecharModal);
+
+      function fecharModal() {
+        const fecharModal = document.querySelector("#conteudo");
+        modal.classList.remove("visivel");
+        modal.classList.add("oculto");
+
+        const outraCorFechar = document.querySelector("main");
+        outraCorFechar.classList.remove("fundo");
+      }
+    </script>
+  </body>
+</html>
