@@ -5,7 +5,7 @@
       </div>
 
       <div class="creme">
-        <img src="../imagens/ornamento.png" alt="" role="presentation" />
+        <img src="./imagens/ornamento.png" alt="" role="presentation" />
       </div>
 
       <div class="red">BEM VINDO!</div>
@@ -13,7 +13,7 @@
     <header>
       <div class="logo">
         <a href="#hero">
-          <img src="../imagens/logo.png" alt="Luce d'Itália" />
+          <img src="./imagens/logo.png" alt="Luce d'Itália" />
         </a>
       </div>
 

@@ -25,7 +25,7 @@
         <nav class="navegacao">
           <h2>NAVEGAÇÃO</h2>
 
-          <img src="../imagens/ornamento.png" alt="Ornamento" class="ornamento" />
+          <img src="./imagens/ornamento.png" alt="Ornamento" class="ornamento" />
 
           <ul>
             <li>
@@ -83,7 +83,7 @@
       <div class="atendimento">
         <h2>ATENDIMENTO</h2>
 
-        <img src="../imagens/ornamento.png" alt="Ornamento" class="ornamento" />
+        <img src="./imagens/ornamento.png" alt="Ornamento" class="ornamento" />
 
         <div class="atendimento-lista">
           <div class="info-item">
@@ -128,7 +128,7 @@
       <div class="social-footer">
         <h2>SIGA-NOS</h2>
 
-        <img src="../imagens/ornamento.png" alt="Ornamento" class="ornamento" />
+        <img src="./imagens/ornamento.png" alt="Ornamento" class="ornamento" />
 
         <div class="social-lista">
           <a href="#">
@@ -159,14 +159,14 @@
       </div>
 
       <div class="footer-center">
-        <img src="../imagens/ornamento.png" />
+        <img src="./imagens/ornamento.png" />
         <div class="footer-center-pratos">
-          <img src="../imagens/pratos.png" alt="Talheres e prato" />
+          <img src="./imagens/pratos.png" alt="Talheres e prato" />
         </div>
       </div>
 
       <div class="footer-decoration right-decoration">
-        <img src="../imagens/plantaRight.png" alt="Decoração" />
+        <img src="./imagens/plantaRight.png" alt="Decoração" />
       </div>
     </div>
   </footer>
