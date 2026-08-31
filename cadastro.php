@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 class="span-color2">Política de Privacidade.</span></p>
                     </div>
                     <button class="button-cadastro">Criar conta</button>
-                    <p>Já tem uma conta? <a href="login.html" class="span-color2">Entrar</a></p>
+                    <p>Já tem uma conta? <a href="login.php" class="span-color2">Entrar</a></p>
                 </form>
 
 
