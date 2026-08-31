@@ -104,7 +104,7 @@ body {
 .hero-right img {
     width: 40vw;
     opacity: 0.48;
-    filter: sepia(30%) saturate(120%);
+    filter: sepia(30%) saturate(100%);
 }
 
 /* FIILTROS */

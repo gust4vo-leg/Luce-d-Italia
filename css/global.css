@@ -23,6 +23,10 @@
     --border-gold: #b08a5260;
     --border-gold-trans: #b08a5236;
 
+    --status-cancelado: #e7131d5b;
+    --status-entregue: #16a33748;
+    --status-caminho: #55555536;
+
     --text: #292929;
     --text-muted: #555555;
     --text-soft: #4a4a4a;
