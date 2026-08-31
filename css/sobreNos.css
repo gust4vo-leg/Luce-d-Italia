@@ -10,6 +10,10 @@ body {
     background: var(--cream);
 }
 
+.quebra-linha {
+    display: block;
+}
+
 .hero {
     position: relative;
     width: 100%;
@@ -78,7 +82,7 @@ body {
 }
 
 .divisao-hero {
-    width: 30vw;
+    width: 90vw;
     height: 1px;
     padding: 0;
     margin: 30px auto 0;
@@ -101,4 +105,90 @@ body {
     width: 40vw;
     opacity: 0.48;
     filter: sepia(30%) saturate(120%);
+}
+
+.title-cardapio {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.title-cardapio h1 {
+    color: var(--green-light);
+    font-family: var(--font-serif);
+}
+
+.linha-decorativa {
+    position: relative;
+    flex-grow: 1;
+    max-width: 10vw;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+.linha-decorativa::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--gold);
+    transform: rotate(45deg);
+}
+
+.linha-decorativa.esquerda::after {
+    right: 0;
+}
+
+.linha-decorativa.direita::after {
+    left: 0;
+}
+
+#hero2 {
+    justify-content: center;
+    margin: 5rem auto;
+    display: flex;
+    gap: 2rem;
+    border-bottom: 1px solid var(--border-gold-trans);
+    padding-bottom: 5rem;
+}   
+
+.text-hero2 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.text-hero2 p {
+   max-width: 500px;
+   font-size: 17px;
+}
+
+.img-hero2 img {
+    border-radius: 20px;
+    width: 600px;
+}
+
+#hero3 {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.icons-hero3 {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+    justify-content: center;
+}
+
+.valores {
+    padding-right: 60px;
+    border-right: 1px solid var(--border-gold-trans);
+    text-align: center;
+}
+.coracao {
+    width: 180px;
 }
