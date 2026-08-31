@@ -186,7 +186,7 @@ body {
 
 .valores {
     padding-right: 60px;
-    border-right: 1px solid var(--border-gold-trans);
+    border-right: 2px solid var(--border-gold-trans);
     text-align: center;
 }
 .coracao {
