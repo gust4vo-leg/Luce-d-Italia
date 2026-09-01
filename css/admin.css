@@ -9,6 +9,10 @@ body {
     background: var(--cream);
 }
 
+a {
+    text-decoration: none;
+}
+
 .hero-container {
     display: flex;
     justify-content: center;
@@ -36,15 +40,17 @@ body {
 }
 
 .estoque-container {
-    max-width: 1200px;
+    max-width: 1600px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--border-gold-trans);
     border-radius: 10px;
     padding: 20px;
     background: var(--cream-soft);
+    margin-bottom: 2rem;
 }
 
 .top-estoque {
@@ -53,19 +59,163 @@ body {
     justify-content: space-between;
 }
 
-.top-estoque h2{
+.top-estoque h2 {
     color: var(--secundary);
     font-family: var(--font-body);
+}
+
+.left-top-estoque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.txt {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.txt i {
+    font-size: 2rem;
+    color: var(--secundary);
 }
 
 .left-top-estoque img {
     width: 4vw;
 }
 
-.right-top-estoque button{
+.right-top-estoque button {
     border: none;
     color: var(--txt-btn);
     background: var(--green);
-    padding: .6rem;
+    padding: .8rem .6rem;
     border-radius: 6px;
+    display: flex;
+    gap: 10px;
+}
+
+.right-top-estoque button:hover {
+    background: var(--secundary);
+}
+
+table {
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 0.875rem;
+
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold-trans);
+}
+
+table thead th {
+    color: var(--gold);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    padding: 17px 16px;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    background: var(--fundo-table);
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+table tbody tr {
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+table tbody tr:last-child {
+    border-bottom: none;
+}
+
+table tbody td {
+    padding: 14px 16px;
+    vertical-align: middle;
+    text-align: left;
+    color: var(--text);
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+.txt-centro {
+    text-align: center !important;
+}
+
+.txt-direita {
+    text-align: center !important;
+}
+
+.ingrediente {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.ingrediente img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-em-estoque {
+    background-color: #edf7ed;
+    color: #1e4620;
+}
+
+.status-atencao {
+    background-color: #fff4e5;
+    color: #663c00;
+}
+
+.status-baixo {
+    background-color: #fdeded;
+    color: #5f2120;
+}
+
+.acao {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.acao a,
+.acao button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: var(--terciary);
+    border-radius: 6px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.acao a:hover {
+    background: #f5f5f5;
+    color: var(--text);
+}
+
+.acao .btn-excluir:hover {
+    background: #fdeded;
+    color: var(--primary);
+    border-color: #fdadad;
 }
