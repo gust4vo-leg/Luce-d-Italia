@@ -434,12 +434,94 @@ table tbody td {
     color: var(--green-light);
     font-family: var(--font-sans);
     font-size: 0.7rem;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .ver-cardapio a:hover {
     color: var(--green);
 }
+
+/* KPIs */
+#KPIs {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.kpis-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.grid-kpi {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.group-kpi {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 24px;
+    background: var(--cream-soft);
+    border: 1px solid var(--border-gold-trans);
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.group-kpi:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(92, 58, 32, 0.08);
+}
+
+.icon-kpi {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--fundo-table);
+    border: 1px solid var(--border-gold-trans);
+}
+
+.icon-kpi i {
+    font-size: 1.7rem;
+}
+
+.ingredientes .icon-kpi {
+    color: var(--green-light);
+}
+
+.cardapio .icon-kpi {
+    color: var(--primary);
+}
+
+.info-kpi {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    gap: 3px;
+}
+
+.info-kpi h3 {
+    margin: 0;
+    color: var(--green);
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.cardapio .info-kpi h3 {
+    color: var(--wine);
+}
+
 
 /* MODAL */
 
