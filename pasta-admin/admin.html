@@ -15,24 +15,6 @@
 </head>
 
 <body id="pagina">
-  <style>
-    .fundo {
-      background: rgba(0, 0, 0, 0.24);
-      filter: blur(2px);
-    }
-
-    .oculto {
-      display: none;
-      visibility: hidden;
-      background: black;
-    }
-
-    .visivel {
-      display: block;
-      visibility: visible;
-    }
-  </style>
-
   <section class="header">
     <div class="top-header">
       <div class="green">
@@ -120,7 +102,6 @@
             <tr>
               <td>
                 <div class="ingrediente">
-                  <img src="../imagens/tomate.png" alt="Tomate">
                   <span>Tomate Pelado</span>
                 </div>
               </td>
@@ -146,7 +127,6 @@
             <tr>
               <td>
                 <div class="ingrediente">
-                  <img src="../imagens/manjericao.png" alt="Manjericão">
                   <span>Manjericão</span>
                 </div>
               </td>
@@ -172,7 +152,6 @@
             <tr>
               <td>
                 <div class="ingrediente">
-                  <img src="../imagens/parmesao.png" alt="Queijo Parmesão">
                   <span>Queijo Parmesão</span>
                 </div>
               </td>
@@ -198,7 +177,6 @@
             <tr>
               <td>
                 <div class="ingrediente">
-                  <img src="../imagens/farinha.png" alt="Farinha 00">
                   <span>Farinha 00</span>
                 </div>
               </td>
@@ -224,7 +202,6 @@
             <tr>
               <td>
                 <div class="ingrediente">
-                  <img src="../imagens/azeite.png" alt="Azeite de Oliva">
                   <span>Azeite de Oliva</span>
                 </div>
               </td>
@@ -250,7 +227,6 @@
             <tr>
               <td>
                 <div class="ingrediente">
-                  <img src="../imagens/alho.png" alt="Alho">
                   <span>Alho</span>
                 </div>
               </td>
@@ -274,42 +250,304 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <section id="card-gerenciamento">
+      <div class="gerenciamento-container">
+
+        <div class="top-gerenciamento">
+          <div class="left-top-gerenciamento">
+            <div class="txt">
+              <i class="bi bi-menu-button-wide"></i>
+              <h2>GERENCIAR CARDÁPIO</h2>
+            </div>
+
+            <img src="../imagens/ornamento.png" alt="">
+          </div>
+
+          <div class="right-top-gerenciamento">
+            <div class="filtros-cardapio">
+              <select id="filtroCategoria">
+                <option value="todos">Todas as Categorias</option>
+                <option value="entradas">Entradas</option>
+                <option value="massas">Massas</option>
+                <option value="pizzas">Pizzas</option>
+                <option value="sobremesas">Sobremesas</option>
+              </select>
+
+              <button type="button" id="btnAdicionarPrato">
+                <i class="bi bi-plus-lg"></i>
+                Adicionar Prato
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-cardapio">
+          <div class="card-prato" data-categoria="pizzas">
+            <div class="foto-prato">
+              <img src="../imagens/pizza.jpg" alt="Pizza Margherita">
+            </div>
+
+            <div class="info-geral">
+              <div class="info-prato">
+                <h3>Pizza Margherita</h3>
+                <span>Pizzas</span>
+                <strong>R$ 59,90</strong>
+              </div>
+
+              <div class="acoes-prato">
+                <button type="button" class="btn-editar">
+                  <i class="bi bi-pencil"></i>
+                  Editar
+                </button>
+
+                <button type="button" class="btn-excluir-prato">
+                  <i class="bi bi-trash"></i>
+                  Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ver-cardapio">
+          <a href="cardapio.php">
+            Ver todos os pratos do cardápio
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
 
       </div>
     </section>
 
-    <div id="modal" class="oculto modal">
-      <div class="text-modal">
-        <h2>Modal aberto</h2>
-        <p>Primeira atividade de modal</p>
+    <!-- MODAL IGREDIENTE -->
+    <div id="modalIngrediente" class="oculto modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <h2>Adicionar Ingrediente</h2>
+            <p>Cadastre um novo ingrediente no estoque</p>
+          </div>
+
+          <button type="button" id="fecharModalIngrediente" class="fechar-modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <form id="formIngrediente">
+          <div class="campo-modal">
+            <label for="nomeIngrediente">
+              Nome do ingrediente
+            </label>
+
+            <input type="text" id="nomeIngrediente" name="nome" placeholder="Ex: Tomate Pelado" required>
+          </div>
+
+          <div class="linha-modal">
+            <div class="campo-modal">
+              <label for="categoriaIngrediente">
+                Categoria
+              </label>
+
+              <select id="categoriaIngrediente" name="categoria" required>
+                <option value="">Selecione</option>
+                <option value="vegetais">Vegetais</option>
+                <option value="laticinios">Laticínios</option>
+                <option value="carnes">Carnes</option>
+                <option value="massas">Massas</option>
+                <option value="temperos">Temperos</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
+
+            <div class="campo-modal">
+              <label for="unidadeIngrediente">
+                Unidade
+              </label>
+
+              <select id="unidadeIngrediente" name="unidade" required>
+                <option value="">Selecione</option>
+                <option value="kg">Kg</option>
+                <option value="g">Gramas</option>
+                <option value="l">Litros</option>
+                <option value="ml">Mililitros</option>
+                <option value="un">Unidade</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="linha-modal">
+            <div class="campo-modal">
+              <label for="quantidadeIngrediente">
+                Quantidade atual
+              </label>
+
+              <input type="number" id="quantidadeIngrediente" name="quantidade" placeholder="Ex: 10" min="0" step="0.01"
+                required>
+            </div>
+
+            <div class="campo-modal">
+              <label for="estoqueMinimo">
+                Estoque mínimo
+              </label>
+
+              <input type="number" id="estoqueMinimo" name="estoque_minimo" placeholder="Ex: 5" min="0" step="0.01"
+                required>
+            </div>
+          </div>
+
+          <div class="campo-modal">
+            <label for="observacaoIngrediente">
+              Observação
+            </label>
+
+            <textarea id="observacaoIngrediente" name="observacao" rows="3"
+              placeholder="Alguma informação sobre este ingrediente..."></textarea>
+          </div>
+
+          <div class="acoes-modal">
+            <button type="button" id="cancelarModalIngrediente" class="btn-cancelar">
+              Cancelar
+            </button>
+
+            <button type="submit" class="btn-salvar">
+              <i class="bi bi-check-lg"></i>
+              Adicionar Ingrediente
+            </button>
+          </div>
+        </form>
       </div>
-      <button type="button" id="fecharModal">Fechar</button>
+    </div>
+
+    <!-- MODAL PRATO -->
+    <div id="modal" class="oculto modal">
+      <div class="modal-card">
+
+        <div class="modal-header">
+          <div>
+            <h2>Adicionar Prato</h2>
+            <p>Cadastre um novo prato no cardápio</p>
+          </div>
+
+          <button type="button" id="fecharModal" class="fechar-modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <form id="formPrato">
+          <div class="campo-modal">
+            <label for="nomePrato">Nome do prato</label>
+            <input type="text" id="nomePrato" name="nome" placeholder="Ex: Spaghetti al Pomodoro" required>
+          </div>
+
+          <div class="linha-modal">
+            <div class="campo-modal">
+              <label for="categoriaPrato">Categoria</label>
+              <select id="categoriaPrato" name="categoria" required>
+                <option value="">Selecione</option>
+                <option value="entradas">Entradas</option>
+                <option value="massas">Massas</option>
+                <option value="pizzas">Pizzas</option>
+                <option value="sobremesas">Sobremesas</option>
+              </select>
+            </div>
+
+            <div class="campo-modal">
+              <label for="precoPrato">Preço</label>
+              <input type="number" id="precoPrato" name="preco" placeholder="0,00" step="0.01" min="0" required>
+            </div>
+
+          </div>
+
+          <div class="campo-modal">
+            <label for="descricaoPrato">Descrição</label>
+            <textarea id="descricaoPrato" name="descricao" placeholder="Descreva os ingredientes e detalhes do prato..."
+              rows="4"></textarea>
+          </div>
+
+          <div class="campo-modal">
+            <label for="imagemPrato">Imagem do prato</label>
+
+            <div class="upload-imagem">
+              <i class="bi bi-image"></i>
+              <span>Selecionar imagem</span>
+
+              <input type="file" id="imagemPrato" name="imagem" accept="image/*">
+            </div>
+          </div>
+
+          <div class="acoes-modal">
+            <button type="button" id="cancelarModal" class="btn-cancelar">
+              Cancelar
+            </button>
+
+            <button type="submit" class="btn-salvar">
+              <i class="bi bi-check-lg"></i>
+              Adicionar Prato
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
 
   <script>
-    const botao = document.querySelector("#btnAdicionar");
-    botao.addEventListener("click", abrirModal);
+    //ESTOQUE
+    const botaoIngrediente = document.querySelector("#btnAdicionar");
+    const botaoFecharIngrediente = document.querySelector("#fecharModalIngrediente");
+    const botaoCancelarIngrediente = document.querySelector("#cancelarModalIngrediente");
+
+    function abrirModalIngrediente() {
+      const modalIngrediente = document.querySelector("#modalIngrediente");
+      const conteudo = document.querySelector("#conteudo");
+
+      modalIngrediente.classList.remove("oculto");
+      modalIngrediente.classList.add("visivel");
+      conteudo.classList.add("fundo");
+    }
+
+    function fecharModalIngrediente() {
+      const modalIngrediente = document.querySelector("#modalIngrediente");
+      const conteudo = document.querySelector("#conteudo");
+      modalIngrediente.classList.remove("visivel");
+      modalIngrediente.classList.add("oculto");
+      conteudo.classList.remove("fundo");
+    }
+
+    botaoIngrediente.addEventListener("click", abrirModalIngrediente);
+    botaoFecharIngrediente.addEventListener("click", fecharModalIngrediente);
+    botaoCancelarIngrediente.addEventListener("click", fecharModalIngrediente);
+
+    //GERENCIAMENTO
+    const botaoPrato = document.querySelector("#btnAdicionarPrato");
+    const botaoFecharPrato = document.querySelector("#fecharModal");
+    const botaoCancelarPrato = document.querySelector("#cancelarModal");
+
+    botaoPrato.addEventListener("click", abrirModal);
+    botaoFecharPrato.addEventListener("click", fecharModal);
+    botaoCancelarPrato.addEventListener("click", fecharModal);
 
     function abrirModal() {
       const modal = document.querySelector("#modal");
+      const conteudo = document.querySelector("#conteudo");
+
       modal.classList.remove("oculto");
       modal.classList.add("visivel");
 
-      const outraCor = document.querySelector("main");
-      outraCor.classList.add("fundo");
+      conteudo.classList.add("fundo");
     }
 
-    const botaoFechar = document.querySelector("#fecharModal");
-    botaoFechar.addEventListener("click", fecharModal);
-
     function fecharModal() {
-      const fecharModal = document.querySelector("#conteudo");
+      const modal = document.querySelector("#modal");
+      const conteudo = document.querySelector("#conteudo");
+
       modal.classList.remove("visivel");
       modal.classList.add("oculto");
 
-      const outraCorFechar = document.querySelector("main");
-      outraCorFechar.classList.remove("fundo");
+      conteudo.classList.remove("fundo");
     }
   </script>
 </body>

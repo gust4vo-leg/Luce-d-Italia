@@ -157,12 +157,6 @@ table tbody td {
     font-weight: bold;
 }
 
-.ingrediente img {
-    width: 2.5rem;
-    height: 2.5rem;
-    object-fit: contain;
-}
-
 .status-badge {
     display: inline-block;
     padding: 6px 12px;
@@ -218,4 +212,592 @@ table tbody td {
     background: #fdeded;
     color: var(--primary);
     border-color: #fdadad;
+}
+
+#card-gerenciamento {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.gerenciamento-container {
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid var(--border-gold-trans);
+    border-radius: 10px;
+    padding: 20px;
+    background: var(--cream-soft);
+}
+
+.top-gerenciamento {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-top-gerenciamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-top-gerenciamento .txt h2 {
+    color: var(--secundary);
+    font-family: var(--font-body);
+}
+
+.left-top-gerenciamento .txt i {
+    font-size: 2rem;
+    color: var(--secundary);
+}
+
+.left-top-gerenciamento img {
+    width: 4vw;
+}
+
+.right-top-gerenciamento {
+    display: flex;
+    align-items: center;
+}
+
+.filtros-cardapio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.filtros-cardapio select {
+    height: 42px;
+    min-width: 180px;
+    padding: 0 12px;
+    border: 1px solid var(--border-gold-trans);
+    border-radius: 6px;
+    background: var(--terciary);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    outline: none;
+}
+
+.filtros-cardapio select:focus {
+    border-color: var(--gold);
+}
+
+#btnAdicionarPrato {
+    border: none;
+    color: var(--txt-btn);
+    background: var(--green);
+    padding: 0.8rem 0.9rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#btnAdicionarPrato:hover {
+    background: var(--secundary);
+}
+
+.grid-cardapio {
+    width: 100%;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+
+
+.info-geral {
+    background: var(--terciary);
+    border: 1px solid var(--border-gold-trans);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 10px;
+    transition: 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 15.1vw;
+}
+
+.foto-prato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-prato img {
+    width: 15vw;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.info-prato {
+    text-align: center;
+    padding: 8px 4px;
+}
+
+.info-prato h3 {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.info-prato span {
+    display: block;
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+}
+
+.info-prato strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--primary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.acoes-prato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.acoes-prato button {
+    height: 30px;
+    border-radius: 5px;
+    background: var(--terciary);
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: 0.2s ease;
+    width: 6vw;
+}
+
+.btn-editar {
+    border: 1px solid var(--border-soft);
+    color: var(--green-light);
+}
+
+.btn-editar:hover {
+    background: var(--cream-soft);
+    border-color: var(--green-light);
+}
+
+.btn-excluir-prato {
+    border: 1px solid var(--border-gold-trans);
+    color: var(--primary);
+}
+
+.btn-excluir-prato:hover {
+    background: var(--cream);
+    border-color: var(--primary);
+}
+
+.acoes-prato i {
+    font-size: 0.7rem;
+}
+
+.ver-cardapio {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.ver-cardapio a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--green-light);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+
+.ver-cardapio a:hover {
+    color: var(--green);
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(23, 59, 37, 0.45);
+}
+
+.modal.oculto {
+    display: none;
+    visibility: hidden;
+}
+
+.modal.visivel {
+    display: flex;
+    visibility: visible;
+}
+
+.modal-card {
+    width: 100%;
+    max-width: 550px;
+    background: var(--cream-soft);
+    border: 1px solid var(--border-gold);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(92, 58, 32, 0.18);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--green);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+}
+
+.modal-header p {
+    margin: 5px 0 0;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+}
+
+.fechar-modal {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    background: var(--terciary);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.fechar-modal:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.campo-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.campo-modal label {
+    color: var(--green);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.campo-modal input,
+.campo-modal select,
+.campo-modal textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--border-gold);
+    border-radius: 6px;
+    background: var(--terciary);
+    color: var(--text);
+    padding: 11px 12px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.campo-modal input:focus,
+.campo-modal select:focus,
+.campo-modal textarea:focus {
+    border-color: var(--green-light);
+}
+
+.campo-modal textarea {
+    resize: vertical;
+    min-height: 90px;
+    resize: none;
+}
+
+.linha-modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.upload-imagem {
+    position: relative;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px dashed var(--gold);
+    border-radius: 7px;
+    background: var(--cream);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.upload-imagem i {
+    color: var(--green-light);
+    font-size: 1.4rem;
+}
+
+.upload-imagem span {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+}
+
+.upload-imagem input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.acoes-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-gold-trans);
+}
+
+.acoes-modal button {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cancelar {
+    border: 1px solid var(--border-soft);
+    background: var(--terciary);
+    color: var(--text-muted);
+}
+
+.btn-cancelar:hover {
+    border-color: var(--text-muted);
+}
+
+.btn-salvar {
+    border: none;
+    background: var(--btn-primary);
+    color: var(--txt-btn);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.btn-salvar:hover {
+    background: var(--secundary);
+}
+
+/* MODAL IGREDIENTE */
+#modalIngrediente {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(23, 59, 37, 0.45);
+}
+
+#modalIngrediente.oculto {
+    display: none;
+    visibility: hidden;
+}
+
+#modalIngrediente.visivel {
+    display: flex;
+    visibility: visible;
+}
+
+#modalIngrediente .modal-card {
+    width: 100%;
+    max-width: 550px;
+    background: var(--cream-soft);
+    border: 1px solid var(--border-gold);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(92, 58, 32, 0.18);
+}
+
+#modalIngrediente .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+#modalIngrediente .modal-header h2 {
+    margin: 0;
+    color: var(--green);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+}
+
+#modalIngrediente .modal-header p {
+    margin: 5px 0 0;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+}
+
+#modalIngrediente .fechar-modal {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    background: var(--terciary);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#modalIngrediente .fechar-modal:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+#modalIngrediente .campo-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+#modalIngrediente .campo-modal label {
+    color: var(--green);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+#modalIngrediente .campo-modal input,
+#modalIngrediente .campo-modal select,
+#modalIngrediente .campo-modal textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid var(--border-gold);
+    border-radius: 6px;
+    outline: none;
+    background: var(--terciary);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+}
+
+#modalIngrediente .campo-modal input:focus,
+#modalIngrediente .campo-modal select:focus,
+#modalIngrediente .campo-modal textarea:focus {
+    border-color: var(--green-light);
+}
+
+#modalIngrediente .campo-modal textarea {
+    min-height: 85px;
+    resize: vertical;
+    resize: none;
+}
+
+#modalIngrediente .linha-modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#modalIngrediente .acoes-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-gold-trans);
+}
+
+#modalIngrediente .acoes-modal button {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#modalIngrediente .btn-cancelar {
+    border: 1px solid var(--border-soft);
+    background: var(--terciary);
+    color: var(--text-muted);
+}
+
+#modalIngrediente .btn-cancelar:hover {
+    border-color: var(--text-muted);
+}
+
+#modalIngrediente .btn-salvar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    background: var(--btn-primary);
+    color: var(--txt-btn);
+}
+
+#modalIngrediente .btn-salvar:hover {
+    background: var(--secundary);
+}
+
+#modalIngrediente .btn-salvar i {
+    font-size: 0.8rem;
 }
