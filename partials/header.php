@@ -27,10 +27,10 @@ $base = "/Luce-d-Italia/"
 
       <nav class="header-list" id="header-list">
         <ul class="menu">
-          <li><a class="ativo" href="index.php">Início</a></li>
-          <li><a href="cardapio.php">Cardápio</a></li>
-          <li><a href="#reservas">Reservas</a></li>
-          <li><a href="sobreNos.html">Sobre Nós</a></li>
+          <li><a class="ativo" href="<?= $base ?>index.php">Início</a></li>
+          <li><a href="<?= $base ?>cardapio.php">Cardápio</a></li>
+          <li><a href="<?= $base ?>#reservas">Reservas</a></li>
+          <li><a href="<?= $base ?>sobreNos.html">Sobre Nós</a></li>
         </ul>
 
         <div class="btn-header">
