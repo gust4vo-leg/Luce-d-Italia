@@ -1,0 +1,480 @@
+body {
+    background: var(--cream);
+}
+
+#reserva {
+    width: 100%;
+    overflow: hidden;
+}
+
+#hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-centro {
+    width: 100%;
+    padding: 65px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-txt h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: var(--wine);
+    text-align: center;
+}
+
+.hero-bordar-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -55px;
+}
+
+.hero-bordar-txt img {
+    width: 25rem;
+    height: auto;
+}
+
+.details-txt-hero {
+    width: 390px;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.details-txt-hero p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.details-txt-hero strong {
+    color: var(--wine);
+    font-style: italic;
+}
+
+.divisao-hero {
+    width: 30vw;
+    height: 1px;
+    padding: 0;
+    margin: 30px auto 0;
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+.hero-right {
+    position: absolute;
+    top: 90px;
+    right: -15px;
+    bottom: -5px;
+    height: 290px;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hero-right img {
+    width: 40vw;
+    opacity: 0.48;
+    filter: sepia(30%) saturate(100%);
+}
+
+
+   /* FORMULÁRIO + RESUMO */
+#formulario-informacoes {
+    width: 100%;
+    padding: 20px 0 15px;
+    background: var(--cream);
+}
+
+.reserva-container {
+    width: min(100% - 90px, 1100px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 0.9fr;
+    gap: 18px;
+}
+
+.formulario-left,
+.resumo-reserva {
+    background: var(--cream-soft);
+    border: 1px solid var(--border-gold);
+    border-radius: 5px;
+    padding: 18px;
+}
+
+.top-formulario,
+.top-resumo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.top-formulario i,
+.top-resumo i {
+    font-size: 17px;
+    color: var(--text);
+}
+
+.top-formulario h2,
+.top-resumo h2 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-sans);
+    font-size: .6rem;
+    font-weight: 600;
+    color: var(--text);
+    text-transform: uppercase;
+}
+
+.form-group label span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.input-icon input,
+.input-icon select,
+.form-group input {
+    width: 100%;
+    height: 30px;
+    padding: 0 10px 0 30px;
+    border: 1px solid var(--border-soft);
+    border-radius: 3px;
+    background: var(--cream-soft);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-icon input:focus,
+.input-icon select:focus {
+    border-color: var(--gold);
+}
+
+.textarea-wrapper {
+    position: relative;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    height: 70px;
+    resize: none;
+    padding: 9px;
+    border: 1px solid var(--border-soft);
+    border-radius: 3px;
+    background: var(--cream-soft);
+    font-family: var(--font-body);
+    font-size: .7rem;
+    color: var(--text);
+    outline: none;
+}
+
+.textarea-wrapper textarea:focus {
+    border-color: var(--gold);
+}
+
+.contador {
+    position: absolute;
+    right: 7px;
+    bottom: 5px;
+    font-family: var(--font-sans);
+    font-size: 7px;
+    color: var(--text-muted);
+}
+
+.btn-confirmar {
+    width: 100%;
+    height: 31px;
+    border: none;
+    border-radius: 3px;
+    background: var(--green);
+    color: var(--txt-btn);
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-confirmar:hover {
+    background: var(--green-light);
+}
+
+.btn-confirmar i {
+    margin-right: 7px;
+}
+
+.aviso-reserva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 9px;
+    font-family: var(--font-body);
+    font-size: .8rem;
+    color: var(--text-muted);
+}
+
+.aviso-reserva i {
+    color: var(--primary);
+}
+
+.resumo-reserva {
+    padding: 18px 14px;
+}
+
+.resumo-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.resumo-item {
+    display: grid;
+    grid-template-columns: 18px 1fr auto;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.resumo-item i {
+    color: var(--text-muted);
+}
+
+.resumo-item span {
+    color: var(--text-muted);
+}
+
+.resumo-item strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.aviso-resumo {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-gold-trans);
+    border-radius: 4px;
+    background: #edf4e9;
+}
+
+.icone-aviso i {
+    font-size: 17px;
+    color: var(--secundary);
+}
+
+.aviso-resumo h3,
+.duvidas-resumo h3 {
+    font-family: var(--font-heading);
+    font-size: .8rem;
+    margin-bottom: 4px;
+    color: var(--text);
+}
+
+.aviso-resumo p,
+.duvidas-resumo p {
+    font-family: var(--font-body);
+    font-size: .7rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.duvidas-resumo {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    background: var(--cream);
+}
+
+.duvidas-resumo > i {
+    font-size: 17px;
+    color: var(--primary);
+}
+
+.duvidas-resumo strong {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--font-body);
+    font-size: .8rem;
+    color: var(--primary);
+}
+
+#ambientes {
+    width: 100%;
+    padding: 5px 0 30px;
+    background: var(--cream);
+}
+
+.ambientes-container {
+    width: min(100% - 90px, 1100px);
+    margin: 0 auto;
+    padding: 12px;
+    border: 1px solid var(--border-gold-trans);
+    border-radius: 5px;
+    background: var(--cream-soft);
+}
+
+.titulo-ambientes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.titulo-ambientes img {
+    width: 65px;
+    height: 10px;
+    object-fit: contain;
+}
+
+.titulo-ambientes h2 {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--text);
+}
+
+.ambientes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.card-ambiente {
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    background: var(--cream);
+}
+
+.imagem-ambiente {
+    width: 100%;
+    height: 145px;
+    overflow: hidden;
+}
+
+.imagem-ambiente img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-ambiente:hover .imagem-ambiente img {
+    transform: scale(1.04);
+}
+
+.info-ambiente {
+    padding: 9px;
+    text-align: center;
+}
+
+.info-ambiente h3 {
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+    font-size: 1.03rem;
+    color: var(--secundary);
+}
+
+.info-ambiente p {
+    min-height: 28px;
+    margin-bottom: 7px;
+    font-family: var(--font-body);
+    font-size: .8rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.info-ambiente span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background: var(--beige);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.info-ambiente span i {
+    color: var(--brown);
+}
+
+.observacao-ambientes {
+    margin-top: 10px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: .8rem;
+    color: var(--text-muted);
+}
