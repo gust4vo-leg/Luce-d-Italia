@@ -175,20 +175,81 @@ body {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--border-gold-trans);
 }
 
 .icons-hero3 {
     display: flex;
     align-items: center;
-    gap: 160px;
     justify-content: center;
 }
 
 .valores {
-    padding-right: 60px;
-    border-right: 2px solid var(--border-gold-trans);
+    border-right: 1px solid var(--border-gold-trans);
+    padding-right: 90px;
+    padding-left: 90px;
+}
+
+.valores h2 {
+    text-align: center;
+}
+
+.valores p {
     text-align: center;
 }
 .coracao {
     width: 180px;
 }
+
+#hero4 {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.descHero4 {
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.iconHero4 {
+    display: flex;
+    border: 1px solid var(--border-gold-trans);
+    padding: 20px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.compromisso {
+    border-right: 1px solid var(--border-gold-trans);
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+
+.valores:last-child {
+    border-right: none;
+}
+.compromisso:last-child {
+    border-right: none;
+}
+
+.compromisso p {
+    text-align: center;
+}
+
+.compromisso img {
+    width: 160px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.paragrafo4 {
+    font-size: 20px;
+}
+
