@@ -29,8 +29,8 @@ $base = "/Luce-d-Italia/"
         <ul class="menu">
           <li><a class="ativo" href="<?= $base ?>index.php">Início</a></li>
           <li><a href="<?= $base ?>cardapio.php">Cardápio</a></li>
-          <li><a href="<?= $base ?>#reservas">Reservas</a></li>
-          <li><a href="<?= $base ?>sobreNos.html">Sobre Nós</a></li>
+          <li><a href="<?= $base ?>reserva.php">Reservas</a></li>
+          <li><a href="<?= $base ?>sobreNos.php">Sobre Nós</a></li>
         </ul>
 
         <div class="btn-header">

@@ -204,8 +204,10 @@ body {
     background: var(--cream-soft);
     color: var(--text);
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: .8rem;
     outline: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .input-icon input:focus,
