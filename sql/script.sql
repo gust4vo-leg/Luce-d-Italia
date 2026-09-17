@@ -28,5 +28,6 @@ CREATE TABLE estoques (
     id_ingrediente INT AUTO_INCREMENT PRIMARY KEY,
     nome_ingredientes VARCHAR(100) NOT NULL,
     num_ingrediente INT NOT NULL,
-    preco DECIMAL(10, 2) NOT NULL -- DECIMAL é o tipo correto para valores monetários
+    preco DECIMAL(10, 2) NOT NULL, -- DECIMAL é o tipo correto para valores monetários
+    estoque_min INT NOT NULL
 );

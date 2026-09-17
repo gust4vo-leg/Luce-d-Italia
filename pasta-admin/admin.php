@@ -179,9 +179,9 @@ session_start();
               </td>
               <td>
                 <div class="acao">
-                  <a href="#">
+                  <button type="button" id="btnEditar">
                     <i class="bi bi-pencil"></i>
-                  </a>
+                  </button>
                   <button class="btn-excluir">
                     <i class="bi bi-trash"></i>
                   </button>
@@ -414,6 +414,105 @@ session_start();
       </div>
     </div>
 
+    <!-- EDITAR IGREDIENTE -->
+    <div id="modalEditar" class="oculto modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <h2>Editar Ingrediente</h2>
+            <p>Cadastre um novo ingrediente no estoque</p>
+          </div>
+
+          <button type="button" id="fecharModalEditar" class="fechar-modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <form id="formEditar">
+          <div class="campo-modal">
+            <label for="nomeIngrediente">
+              Nome do ingrediente
+            </label>
+
+            <input type="text" id="nomeEditar" name="nome" placeholder="Ex: Tomate Pelado" required>
+          </div>
+
+          <div class="linha-modal">
+            <div class="campo-modal">
+              <label for="categoriaIngrediente">
+                Categoria
+              </label>
+
+              <select id="categoriaEditar" name="categoria" required>
+                <option value="">Selecione</option>
+                <option value="vegetais">Vegetais</option>
+                <option value="laticinios">Laticínios</option>
+                <option value="carnes">Carnes</option>
+                <option value="massas">Massas</option>
+                <option value="temperos">Temperos</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
+
+            <div class="campo-modal">
+              <label for="unidadeIngrediente">
+                Unidade
+              </label>
+
+              <select id="unidadeEditar" name="unidade" required>
+                <option value="">Selecione</option>
+                <option value="kg">Kg</option>
+                <option value="g">Gramas</option>
+                <option value="l">Litros</option>
+                <option value="ml">Mililitros</option>
+                <option value="un">Unidade</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="linha-modal">
+            <div class="campo-modal">
+              <label for="quantidadeIngrediente">
+                Quantidade atual
+              </label>
+
+              <input type="number" id="quantidadeEditar" name="quantidade" placeholder="Ex: 10" min="0" step="0.01"
+                required>
+            </div>
+
+            <div class="campo-modal">
+              <label for="estoqueMinimo">
+                Estoque mínimo
+              </label>
+
+              <input type="number" id="estoqueMinimoEditar" name="estoque_minimo" placeholder="Ex: 5" min="0" step="0.01"
+                required>
+            </div>
+          </div>
+
+          <div class="campo-modal">
+            <label for="observacaoIngrediente">
+              Observação
+            </label>
+
+            <textarea id="observacaoEditar" name="observacao" rows="3"
+              placeholder="Alguma informação sobre este ingrediente..."></textarea>
+          </div>
+
+          <div class="acoes-modal">
+            <button type="button" id="cancelarModalEditar" class="btn-cancelar">
+              Cancelar
+            </button>
+
+            <button type="submit" class="btn-salvar">
+              <i class="bi bi-check-lg"></i>
+              Editar Ingrediente
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
     <!-- MODAL PRATO -->
     <div id="modal" class="oculto modal">
       <div class="modal-card">
@@ -541,6 +640,33 @@ session_start();
 
       conteudo.classList.remove("fundo");
     }
+
+    // EDITAR
+    const botaoEditar = document.querySelector("#btnEditar");
+    const botaoFecharEditar = document.querySelector("#fecharModalEditar");
+    const botaoCancelarEditar = document.querySelector("#cancelarModalEditar");
+
+    function abrirModalEditar() {
+      const modalEditar = document.querySelector("#modalEditar");
+      const conteudo = document.querySelector("#conteudo");
+
+      modalEditar.classList.remove("oculto");
+      modalEditar.classList.add("visivel");
+      conteudo.classList.add("fundo");
+    }
+
+    function fecharModalEditar() {
+      const modalEditar = document.querySelector("#modalEditar");
+      const conteudo = document.querySelector("#conteudo");
+      modalEditar.classList.remove("visivel");
+      modalEditar.classList.add("oculto");
+      conteudo.classList.remove("fundo");
+    }
+
+    botaoEditar.addEventListener("click", abrirModalEditar);
+    botaoFecharEditar.addEventListener("click", fecharModalEditar);
+    botaoCancelaEditar.addEventListener("click", fecharModalEditar);
+    
   </script>
 </body>
 
