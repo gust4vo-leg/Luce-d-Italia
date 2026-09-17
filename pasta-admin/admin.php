@@ -1,5 +1,12 @@
 <?php
+<<<<<<< Updated upstream
 session_start();
+=======
+require_once '../crud.php';
+
+$estoques = readAll($pdo, 'estoques');
+$pratos = readAll($pdo, 'pratos');
+>>>>>>> Stashed changes
 ?>
 
 <!doctype html>
@@ -56,7 +63,7 @@ session_start();
             <tr>
               <th>INGREDIENTE</th>
               <th>CATEGORIA</th>
-              <th class="txt-direita">QUANTIDADE</th>
+              <th class="txt-direita">QUANTIDADE(kg)</th>
               <th class="txt-centro">UNIDADE</th>
               <th class="txt-direita">ESTOQUE MÍNIMO</th>
               <th class="txt-centro">STATUS</th>
@@ -64,6 +71,36 @@ session_start();
             </tr>
           </thead>
           <tbody>
+            <?php
+            foreach ($estoques as $estoque) {
+              print '
+                  <tr>
+                    <td>
+                      <div class="ingrediente">
+                        <span>' . $estoque['nome'] . '</span>
+                      </div>
+                    </td>
+                    <td>Vegetais</td>
+                    <td class="txt-direita">' . $estoque['quantidade'] . '</td>
+                    <td class="txt-centro">' . $estoque['unidade'] . '</td>
+                    <td class="txt-direita">' . $estoque['minimo'] . '</td>
+                    <td class="txt-centro">
+                      <span class="status-badge status-em-estoque">' . $estoque['status'] . '</span>
+                    </td>
+                    <td>
+                      <div class="acao">
+                        <button type="button" id="btnEditar">
+                          <i class="bi bi-pencil"></i>
+                        </a>
+                        <button class="btn-excluir">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+              ';
+            }
+            ?>
             <tr>
               <td>
                 <div class="ingrediente">
@@ -76,131 +113,6 @@ session_start();
               <td class="txt-direita">5 kg</td>
               <td class="txt-centro">
                 <span class="status-badge status-em-estoque">Em estoque</span>
-              </td>
-              <td>
-                <div class="acao">
-                  <a href="#">
-                    <i class="bi bi-pencil"></i>
-                  </a>
-                  <button class="btn-excluir">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="ingrediente">
-                  <span>Manjericão</span>
-                </div>
-              </td>
-              <td>Ervas</td>
-              <td class="txt-direita">0,80</td>
-              <td class="txt-centro">kg</td>
-              <td class="txt-direita">0,50 kg</td>
-              <td class="txt-centro">
-                <span class="status-badge status-em-estoque">Em estoque</span>
-              </td>
-              <td>
-                <div class="acao">
-                  <a href="#">
-                    <i class="bi bi-pencil"></i>
-                  </a>
-                  <button class="btn-excluir">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="ingrediente">
-                  <span>Queijo Parmesão</span>
-                </div>
-              </td>
-              <td>Laticínios</td>
-              <td class="txt-direita">2,30</td>
-              <td class="txt-centro">kg</td>
-              <td class="txt-direita">1 kg</td>
-              <td class="txt-centro">
-                <span class="status-badge status-em-estoque">Em estoque</span>
-              </td>
-              <td>
-                <div class="acao">
-                  <a href="#">
-                    <i class="bi bi-pencil"></i>
-                  </a>
-                  <button class="btn-excluir">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="ingrediente">
-                  <span>Farinha 00</span>
-                </div>
-              </td>
-              <td>Secos</td>
-              <td class="txt-white txt-direita">5,00</td>
-              <td class="txt-centro">kg</td>
-              <td class="txt-white txt-direita">2 kg</td>
-              <td class="txt-centro">
-                <span class="status-badge status-em-estoque">Em estoque</span>
-              </td>
-              <td>
-                <div class="acao">
-                  <a href="#">
-                    <i class="bi bi-pencil"></i>
-                  </a>
-                  <button class="btn-excluir">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="ingrediente">
-                  <span>Azeite de Oliva</span>
-                </div>
-              </td>
-              <td>Óleos</td>
-              <td class="txt-white txt-direita">1,20</td>
-              <td class="txt-centro">L</td>
-              <td class="txt-white txt-direita">0,50 L</td>
-              <td class="txt-centro">
-                <span class="status-badge status-atencao">Atenção</span>
-              </td>
-              <td>
-                <div class="acao">
-                  <button type="button" id="btnEditar">
-                    <i class="bi bi-pencil"></i>
-                  </button>
-                  <button class="btn-excluir">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="ingrediente">
-                  <span>Alho</span>
-                </div>
-              </td>
-              <td>Temperos</td>
-              <td class="txt-white txt-direita">0,30</td>
-              <td class="txt-centro">kg</td>
-              <td class="txt-white txt-direita">0,20 kg</td>
-              <td class="txt-centro">
-                <span class="status-badge status-baixo">Estoque baixo</span>
               </td>
               <td>
                 <div class="acao">
@@ -250,6 +162,37 @@ session_start();
         </div>
 
         <div class="grid-cardapio">
+          <?php
+          foreach ($pratos as $prato) {
+            print '
+               <div class="card-prato" data-categoria="pizzas">
+                  <div class="foto-prato">
+                    <img src="../imagens/'.$prato['image'].'" alt="Pizza Margherita">
+                  </div>
+
+                  <div class="info-geral">
+                    <div class="info-prato">
+                      <h3>'.$i.'</h3>
+                      <span>Pizzas</span>
+                      <strong>R$ 59,90</strong>
+                    </div>
+
+                    <div class="acoes-prato">
+                      <button type="button" class="btn-editar">
+                        <i class="bi bi-pencil"></i>
+                        Editar
+                      </button>
+
+                      <button type="button" class="btn-excluir-prato">
+                        <i class="bi bi-trash"></i>
+                        Excluir
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            ';
+          }
+          ?>
           <div class="card-prato" data-categoria="pizzas">
             <div class="foto-prato">
               <img src="../imagens/pizza.jpg" alt="Pizza Margherita">
