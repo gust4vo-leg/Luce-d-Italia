@@ -10,10 +10,17 @@ CREATE TABLE usuarios (
     cpf VARCHAR(11) UNIQUE NOT NULL -- CPF deve ser VARCHAR para preservar zeros à esquerda
 );
 
-CREATE TABLE reservas_mesas (
-    id_reservas INT AUTO_INCREMENT PRIMARY KEY,
-    status ENUM('disponivel', 'indisponivel') DEFAULT 'disponivel', -- Adicionado aspas e valor padrão
-    cadeiras INT NOT NULL
+CREATE TABLE reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    data_reserva DATE NOT NULL,
+    horario_reserva TIME NOT NULL,
+    quantidade_pessoas INT NOT NULL,
+    ambiente_preferido ENUM('interno', 'varanda', 'privativo') DEFAULT 'interno',
+    observacoes VARCHAR(200) NULL,
+    status_reserva ENUM('Pendente', 'Confirmada', 'Cancelada') DEFAULT 'Pendente',
 );
 
 CREATE TABLE pratos (
@@ -21,13 +28,16 @@ CREATE TABLE pratos (
     nome_prato VARCHAR(100) NOT NULL,
     num_prato INT NOT NULL,
     foto_prato VARCHAR(1000),
-    categoria VARCHAR(100)
+    categoria VARCHAR(100),
+    preco DECIMAL(10, 2) NOT NULL,
+    descricao VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE estoques (
     id_ingrediente INT AUTO_INCREMENT PRIMARY KEY,
     nome_ingredientes VARCHAR(100) NOT NULL,
-    num_ingrediente INT NOT NULL,
-    preco DECIMAL(10, 2) NOT NULL, -- DECIMAL é o tipo correto para valores monetários
-    estoque_min INT NOT NULL
+    qtd_ingrediente INT NOT NULL,
+    categoria ENUM('Vegetais', 'Laticínios', 'Carnes', 'Massas', 'Tempero', 'Bebidas') NOT NULL,
+    estoque_min INT NOT NULL,
+    unidade INT NOT NULL
 );
