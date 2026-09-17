@@ -5,16 +5,16 @@ require_once './crud.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $add = [
-        'data' => $_POST['data'],
+        'data_reserva' => $_POST['data'],
         'horario_reserva' => $_POST['horario'],
         'quantidade_pessoas' => $_POST['pessoas'],
         'ambiente_preferido' => $_POST['ambiente'],
         'nome' => $_POST['nome'],
         'email' => $_POST['email'],
         'telefone' => $_POST['telefone'],
-        'observacao' => $_POST['observacoes']
+        'observacoes' => $_POST['observacoes']
     ];
-    create($pdo, 'reservas_mesas', $add);
+    create($pdo, 'reservas', $add);
     header('Location: ./reserva.php');
 }
 
