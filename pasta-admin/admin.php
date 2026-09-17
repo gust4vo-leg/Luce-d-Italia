@@ -1,12 +1,10 @@
 <?php
-<<<<<<< Updated upstream
 session_start();
-=======
+
 require_once '../crud.php';
 
 $estoques = readAll($pdo, 'estoques');
 $pratos = readAll($pdo, 'pratos');
->>>>>>> Stashed changes
 ?>
 
 <!doctype html>
@@ -89,9 +87,9 @@ $pratos = readAll($pdo, 'pratos');
                     </td>
                     <td>
                       <div class="acao">
-                        <button type="button" id="btnEditar">
+                        <button type="button" onclick="abrirEditarIngrediente()" id="btnEditar">
                           <i class="bi bi-pencil"></i>
-                        </a>
+                        </button>
                         <button class="btn-excluir">
                           <i class="bi bi-trash"></i>
                         </button>
@@ -167,14 +165,14 @@ $pratos = readAll($pdo, 'pratos');
             print '
                <div class="card-prato" data-categoria="pizzas">
                   <div class="foto-prato">
-                    <img src="../imagens/'.$prato['image'].'" alt="Pizza Margherita">
+                    <img src="../imagens/'.$prato["foto_prato"].'" alt="Pizza Margherita">
                   </div>
 
                   <div class="info-geral">
                     <div class="info-prato">
-                      <h3>'.$i.'</h3>
-                      <span>Pizzas</span>
-                      <strong>R$ 59,90</strong>
+                      <h3>'.$prato["nome_prato"].'</h3>
+                      <span>'.$prato["categoria"].'</span>
+                      <strong>'.$prato["preco"].'</strong>
                     </div>
 
                     <div class="acoes-prato">
@@ -456,6 +454,7 @@ $pratos = readAll($pdo, 'pratos');
         </form>
       </div>
     </div>
+
     <!-- MODAL PRATO -->
     <div id="modal" class="oculto modal">
       <div class="modal-card">
@@ -526,6 +525,77 @@ $pratos = readAll($pdo, 'pratos');
         </form>
       </div>
     </div>
+
+    <!-- MODAL: EDITAR -->
+     <div id="modal" class="oculto modal">
+      <div class="modal-card">
+
+        <div class="modal-header">
+          <div>
+            <h2>Adicionar Prato</h2>
+            <p>Cadastre um novo prato no cardápio</p>
+          </div>
+
+          <button type="button" id="fecharModal" class="fechar-modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <form id="formPrato">
+          <div class="campo-modal">
+            <label for="nomePrato">Nome do prato</label>
+            <input type="text" id="nomePrato" name="nome" placeholder="Ex: Spaghetti al Pomodoro" required>
+          </div>
+
+          <div class="linha-modal">
+            <div class="campo-modal">
+              <label for="categoriaPrato">Categoria</label>
+              <select id="categoriaPrato" name="categoria" required>
+                <option value="">Selecione</option>
+                <option value="entradas">Entradas</option>
+                <option value="massas">Massas</option>
+                <option value="pizzas">Pizzas</option>
+                <option value="sobremesas">Sobremesas</option>
+              </select>
+            </div>
+
+            <div class="campo-modal">
+              <label for="precoPrato">Preço</label>
+              <input type="number" id="precoPrato" name="preco" placeholder="0,00" step="0.01" min="0" required>
+            </div>
+
+          </div>
+
+          <div class="campo-modal">
+            <label for="descricaoPrato">Descrição</label>
+            <textarea id="descricaoPrato" name="descricao" placeholder="Descreva os ingredientes e detalhes do prato..."
+              rows="4"></textarea>
+          </div>
+
+          <div class="campo-modal">
+            <label for="imagemPrato">Imagem do prato</label>
+
+            <div class="upload-imagem">
+              <i class="bi bi-image"></i>
+              <span>Selecionar imagem</span>
+
+              <input type="file" id="imagemPrato" name="imagem" accept="image/*">
+            </div>
+          </div>
+
+          <div class="acoes-modal">
+            <button type="button" id="cancelarModal" class="btn-cancelar">
+              Cancelar
+            </button>
+
+            <button type="submit" class="btn-salvar">
+              <i class="bi bi-check-lg"></i>
+              Salvar Alterações
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -584,10 +654,13 @@ $pratos = readAll($pdo, 'pratos');
       conteudo.classList.remove("fundo");
     }
 
-    // EDITAR
+
+   // EDITAR
+   function abrirEditarIngrediente(){
     const botaoEditar = document.querySelector("#btnEditar");
     const botaoFecharEditar = document.querySelector("#fecharModalEditar");
     const botaoCancelarEditar = document.querySelector("#cancelarModalEditar");
+  };
 
     function abrirModalEditar() {
       const modalEditar = document.querySelector("#modalEditar");
