@@ -5,10 +5,9 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 
 $pratos = readAll($pdo, 'pratos');
 
-$categorias = [
-    'entradas' => 'entradas',
-    'massas' => 'massas'
-]
+if ($categoria_get === 'todos') {
+    $categoria_get = '';
+}
 
 ?>
 
@@ -66,43 +65,43 @@ $categorias = [
       <div class="filtros-container">
         <div class="filtros">
           <div class="group-filtros">
-            <a href="#">
+            <a href="?categoria=todos">
               <i class="bi bi-grid"></i>
               <p>TODOS</p>
             </a>
           </div>
           <div class="group-filtros">
-            <a href="#">
+            <a href="?categoria=Entradas">
               <i class="bi bi-cloud-fog"></i>
               <p>ENTRADAS</p>
             </a>
           </div>
           <div class="group-filtros">
-            <a href="#">
+            <a href="?categoria=Pratos Principais">
               <i class="bi bi-egg-fried"></i>
               <p>PRATOS PRINCIPAIS</p>
             </a>
           </div>
           <div class="group-filtros">
-            <a href="#">
+            <a href="?categoria=Massas">
               <i class="bi bi-cup-hot"></i>
               <p>MASSAS</p>
             </a>
           </div>
           <div class="group-filtros">
-            <a href="#">
+            <a href="?categoria=Pizzas">
               <i class="bi bi-pie-chart"></i>
               <p>PIZZAS</p>
             </a>
           </div>
           <div class="group-filtros">
-            <a href="#">
+            <a href="?categoria=Sobremesas">
               <i class="bi bi-cake2"></i>
               <p>SOBREMESAS</p>
             </a>
           </div>
           <div class="group-filtros">
-            <a href="#">
+            <a href="?categoria=Bebidas">
               <i class="bi bi-cup-straw"></i>
               <p>BEBIDAS</p>
             </a>
@@ -113,6 +112,9 @@ $categorias = [
 
     <section id="produtos">
       <div class="comidas-container">
+
+        <?php if ($categoria_get === '' || $categoria_get === 'Entradas'): ?>
+
         <div class="cardapio">
           <div class="title-cardapio">
             <div class="linha-decorativa esquerda"></div>
@@ -159,6 +161,10 @@ $categorias = [
           </div>
         </div>
 
+        <?php endif; ?> 
+
+        <?php if ($categoria_get === '' || $categoria_get === 'Pratos Principais'): ?>
+
         <div class="cardapio">
           <div class="title-cardapio">
             <div class="linha-decorativa esquerda"></div>
@@ -173,7 +179,7 @@ $categorias = [
                   print '
                     <div class="card-comida">
                       <div class="img-prato">
-                        <img src="'.$prato["foto_prato"].'">
+                        <img src="./imagens/'.$prato["foto_prato"].'">
                       </div>
 
                       <div class="detalhes-comida">
@@ -202,6 +208,10 @@ $categorias = [
             ?>
           </div>
         </div>
+
+        <?php endif; ?> 
+
+        <?php if ($categoria_get === '' || $categoria_get === 'Massas'): ?>
 
         <div class="cardapio">
           <div class="title-cardapio">
@@ -246,6 +256,11 @@ $categorias = [
             ?>
           </div>
         </div>
+
+        <?php endif; ?> 
+
+        <?php if ($categoria_get === '' || $categoria_get === 'Pizzas'): ?>
+
         <div class="cardapio">
           <div class="title-cardapio">
             <div class="linha-decorativa esquerda"></div>
@@ -292,6 +307,10 @@ $categorias = [
           </div>
         </div>
 
+        <?php endif; ?> 
+
+        <?php if ($categoria_get === '' || $categoria_get === 'Sobremesas'): ?>
+
         <div class="cardapio">
           <div class="title-cardapio">
             <div class="linha-decorativa esquerda"></div>
@@ -337,6 +356,11 @@ $categorias = [
             ?>
           </div>
         </div>
+
+        <?php endif; ?> 
+
+        <?php if ($categoria_get === '' || $categoria_get === 'Bebidas'): ?>
+
         <div class="cardapio">
           <div class="title-cardapio">
             <div class="linha-decorativa esquerda"></div>
@@ -382,6 +406,8 @@ $categorias = [
             ?>
           </div>
         </div>
+
+        <?php endif; ?> 
 
         <br><br><br>
       </div>
