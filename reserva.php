@@ -1,5 +1,21 @@
 <?php
 session_start();
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $add = [
+        'data' => $_POST['data'],
+        'horario' => $_POST['horario'],
+        'num_pessoas' => $_POST['pessoas'],
+        'ambiente' => $_POST['ambiente'],
+        'nome' => $_POST['nome'],
+        'email' => $_POST['email'],
+        'telefone' => $_POST['telefone'],
+        'observacao' => $_POST['observacoes']
+    ];
+    create($pdo, 'reservas', $add);
+    header('Location: ./reserva.php');
+}
+
 ?>
 
 <!DOCTYPE html>

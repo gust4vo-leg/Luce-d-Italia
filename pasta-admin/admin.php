@@ -1,12 +1,9 @@
 <?php
-<<<<<<< Updated upstream
 session_start();
-=======
 require_once '../crud.php';
 
 $estoques = readAll($pdo, 'estoques');
 $pratos = readAll($pdo, 'pratos');
->>>>>>> Stashed changes
 ?>
 
 <!doctype html>
