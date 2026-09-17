@@ -87,7 +87,7 @@ $pratos = readAll($pdo, 'pratos');
                     </td>
                     <td>
                       <div class="acao">
-                        <button type="button" onclick="abrirEditarIngrediente()" id="btnEditar">
+                        <button type="button" id="btnEditar">
                           <i class="bi bi-pencil"></i>
                         </button>
                         <button class="btn-excluir">
@@ -114,9 +114,9 @@ $pratos = readAll($pdo, 'pratos');
               </td>
               <td>
                 <div class="acao">
-                  <a href="#">
+                  <button type="button" id="btnEditar">
                     <i class="bi bi-pencil"></i>
-                  </a>
+                  </button>
                   <button class="btn-excluir">
                     <i class="bi bi-trash"></i>
                   </button>
@@ -165,14 +165,14 @@ $pratos = readAll($pdo, 'pratos');
             print '
                <div class="card-prato" data-categoria="pizzas">
                   <div class="foto-prato">
-                    <img src="../imagens/'.$prato["foto_prato"].'" alt="Pizza Margherita">
+                    <img src="../imagens/' . $prato["foto_prato"] . '" alt="Pizza Margherita">
                   </div>
 
                   <div class="info-geral">
                     <div class="info-prato">
-                      <h3>'.$prato["nome_prato"].'</h3>
-                      <span>'.$prato["categoria"].'</span>
-                      <strong>'.$prato["preco"].'</strong>
+                      <h3>' . $prato["nome_prato"] . '</h3>
+                      <span>' . $prato["categoria"] . '</span>
+                      <strong>' . $prato["preco"] . '</strong>
                     </div>
 
                     <div class="acoes-prato">
@@ -204,7 +204,7 @@ $pratos = readAll($pdo, 'pratos');
               </div>
 
               <div class="acoes-prato">
-                <button type="button" class="btn-editar">
+                <button type="button" class="btn-editar" id="btnEditarPrato">
                   <i class="bi bi-pencil"></i>
                   Editar
                 </button>
@@ -526,31 +526,31 @@ $pratos = readAll($pdo, 'pratos');
       </div>
     </div>
 
-    <!-- MODAL: EDITAR -->
-     <div id="modal" class="oculto modal">
+    <!-- MODAL: EDITAR PRATO -->
+    <div id="modalPratoEditar" class="oculto modal">
       <div class="modal-card">
 
         <div class="modal-header">
           <div>
-            <h2>Adicionar Prato</h2>
+            <h2>Editar Prato</h2>
             <p>Cadastre um novo prato no cardápio</p>
           </div>
 
-          <button type="button" id="fecharModal" class="fechar-modal">
+          <button type="button" id="fecharModalPratoEditar" class="fechar-modal">
             <i class="bi bi-x-lg"></i>
           </button>
         </div>
 
-        <form id="formPrato">
+        <form id="formPratoEditar">
           <div class="campo-modal">
             <label for="nomePrato">Nome do prato</label>
-            <input type="text" id="nomePrato" name="nome" placeholder="Ex: Spaghetti al Pomodoro" required>
+            <input type="text" id="nomePratoEditar" name="nome" placeholder="Ex: Spaghetti al Pomodoro" required>
           </div>
 
           <div class="linha-modal">
             <div class="campo-modal">
               <label for="categoriaPrato">Categoria</label>
-              <select id="categoriaPrato" name="categoria" required>
+              <select id="categoriaPratoEditar" name="categoria" required>
                 <option value="">Selecione</option>
                 <option value="entradas">Entradas</option>
                 <option value="massas">Massas</option>
@@ -561,14 +561,14 @@ $pratos = readAll($pdo, 'pratos');
 
             <div class="campo-modal">
               <label for="precoPrato">Preço</label>
-              <input type="number" id="precoPrato" name="preco" placeholder="0,00" step="0.01" min="0" required>
+              <input type="number" id="precoPratoEditar" name="preco" placeholder="0,00" step="0.01" min="0" required>
             </div>
 
           </div>
 
           <div class="campo-modal">
             <label for="descricaoPrato">Descrição</label>
-            <textarea id="descricaoPrato" name="descricao" placeholder="Descreva os ingredientes e detalhes do prato..."
+            <textarea id="descricaoPratoEditar" name="descricao" placeholder="Descreva os ingredientes e detalhes do prato..."
               rows="4"></textarea>
           </div>
 
@@ -579,12 +579,12 @@ $pratos = readAll($pdo, 'pratos');
               <i class="bi bi-image"></i>
               <span>Selecionar imagem</span>
 
-              <input type="file" id="imagemPrato" name="imagem" accept="image/*">
+              <input type="file" id="imagemPratoEditar" name="imagem" accept="image/*">
             </div>
           </div>
 
           <div class="acoes-modal">
-            <button type="button" id="cancelarModal" class="btn-cancelar">
+            <button type="button" id="cancelarModalPratoEditar" class="btn-cancelar">
               Cancelar
             </button>
 
@@ -655,12 +655,10 @@ $pratos = readAll($pdo, 'pratos');
     }
 
 
-   // EDITAR
-   function abrirEditarIngrediente(){
+    // EDITAR
     const botaoEditar = document.querySelector("#btnEditar");
     const botaoFecharEditar = document.querySelector("#fecharModalEditar");
     const botaoCancelarEditar = document.querySelector("#cancelarModalEditar");
-  };
 
     function abrirModalEditar() {
       const modalEditar = document.querySelector("#modalEditar");
@@ -679,10 +677,46 @@ $pratos = readAll($pdo, 'pratos');
       conteudo.classList.remove("fundo");
     }
 
-    botaoEditar.addEventListener("click", abrirModalEditar);
+    botaoEditar.addEventListener("click", abrirModalEditarPrato);
     botaoFecharEditar.addEventListener("click", fecharModalEditar);
     botaoCancelaEditar.addEventListener("click", fecharModalEditar);
-    
+
+    // EDITAR PRATO
+
+    const botoesEditarPrato = document.querySelectorAll("#btnEditarPrato");
+    const botaoFecharPratoEditar = document.querySelector("#fecharModalPratoEditar");
+    const botaoCancelarPratoEditar = document.querySelector("#cancelarModalPratoEditar");
+
+    function abrirModalPrato() {
+      const modalPratoEditar = document.querySelector("#modalPratoEditar");
+      const conteudo = document.querySelector("#conteudo");
+
+      modalPratoEditar.classList.remove("oculto");
+      modalPratoEditar.classList.add("visivel");
+
+      conteudo.classList.add("fundo");
+    }
+
+    function fecharModalPrato() {
+      const modalPratoEditar = document.querySelector("#modalPratoEditar");
+      const conteudo = document.querySelector("#conteudo");
+
+      modalPratoEditar.classList.remove("visivel");
+      modalPratoEditar.classList.add("oculto");
+
+      conteudo.classList.remove("fundo");
+    }
+
+    botoesEditarPrato.forEach(function(botao) {
+      botao.addEventListener("click", abrirModalPrato);
+    });
+
+    if (botaoFecharPratoEditar) {
+      botaoFecharPratoEditar.addEventListener("click", fecharModalPrato);
+    }
+    if (botaoCancelarPratoEditar) {
+      botaoCancelarPratoEditar.addEventListener("click", fecharModalPrato);
+    }
   </script>
 </body>
 
