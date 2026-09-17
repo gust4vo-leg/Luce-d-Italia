@@ -34,7 +34,7 @@ $base = "/Luce-d-Italia/"
         </ul>
 
         <div class="btn-header">
-          <a href="login.php">
+          <a href=" login.php">
             <i class="bi bi-person"></i>
             <p>ENTRAR</p>
           </a>

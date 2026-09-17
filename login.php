@@ -15,21 +15,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     if ($user) {
-
         $_SESSION['id_user'] = $user['id_user'];
         $_SESSION['nome'] = $user['nome'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['tipo'] = $user['tipo'];
 
-        header('Location: ./login.php');
-        exit;
+        if ($user['tipo'] === 'admin') {
 
+            header('Location: ./pasta-admin/admin.php');
+            exit;
+
+        } else {
+            header('Location: ./index.php');
+            exit;
+        }
     } else {
 
         $erro = 'E-mail ou senha incorretos.';
 
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
