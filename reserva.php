@@ -1,18 +1,20 @@
 <?php
 session_start();
 
+require_once './crud.php';
+
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $add = [
         'data' => $_POST['data'],
-        'horario' => $_POST['horario'],
-        'num_pessoas' => $_POST['pessoas'],
-        'ambiente' => $_POST['ambiente'],
+        'horario_reserva' => $_POST['horario'],
+        'quantidade_pessoas' => $_POST['pessoas'],
+        'ambiente_preferido' => $_POST['ambiente'],
         'nome' => $_POST['nome'],
         'email' => $_POST['email'],
         'telefone' => $_POST['telefone'],
         'observacao' => $_POST['observacoes']
     ];
-    create($pdo, 'reservas', $add);
+    create($pdo, 'reservas_mesas', $add);
     header('Location: ./reserva.php');
 }
 

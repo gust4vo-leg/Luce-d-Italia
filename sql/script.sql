@@ -20,7 +20,7 @@ CREATE TABLE reservas (
     quantidade_pessoas INT NOT NULL,
     ambiente_preferido ENUM('interno', 'varanda', 'privativo') DEFAULT 'interno',
     observacoes VARCHAR(200) NULL,
-    status_reserva ENUM('Pendente', 'Confirmada', 'Cancelada') DEFAULT 'Pendente',
+    status_reserva ENUM('Pendente', 'Confirmada', 'Cancelada') DEFAULT 'Pendente'
 );
 
 CREATE TABLE pratos (
