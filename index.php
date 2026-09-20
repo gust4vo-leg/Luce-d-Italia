@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="btn-hero">
-                        <a class="reserva-hero" href="#reservas">
+                        <a class="reserva-hero" href="reserva.php">
                             <i class="bi bi-calendar"></i>
                             <span>FAZER RESERVA</span>
                         </a>

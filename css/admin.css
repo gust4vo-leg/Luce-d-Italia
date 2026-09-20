@@ -167,17 +167,17 @@ table tbody td {
 }
 
 .status-em-estoque {
-    background-color: #edf7ed;
+    background-color: #e1f8e1;
     color: #1e4620;
 }
 
 .status-atencao {
-    background-color: #fff4e5;
+    background-color: #fcebd4;
     color: #663c00;
 }
 
 .status-baixo {
-    background-color: #fdeded;
+    background-color: #fde0e0;
     color: #5f2120;
 }
 
@@ -313,8 +313,6 @@ table tbody td {
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
 }
-
-
 
 .info-geral {
     background: var(--terciary);
