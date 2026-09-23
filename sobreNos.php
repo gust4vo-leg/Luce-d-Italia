@@ -29,7 +29,7 @@
                     <div class="details-txt-hero">
                         <p>
                             Mais que um restaurante, a Luce D'Italia é um pedaço da Italia no coração de São Paulo.
-                            Aqui, tradição, sabor e paixão se encontram para criar experiência<strong">inesquecíveis à
+                            Aqui, tradição, sabor e paixão se encontram para criar experiência<strong> inesquecíveis à
                                 mesa.</strong>
                         </p>
                     </div>

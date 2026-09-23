@@ -1,7 +1,7 @@
   <?php
-$base = "/Luce-d-Italia/"
-?>
-  
+  $base = "/Luce-d-Italia/";
+  ?>
+
   <footer>
     <div class="footer-main">
       <div class="left">
@@ -11,7 +11,7 @@ $base = "/Luce-d-Italia/"
 
         <div class="detalhe-insp">
           <span>Tradição, sabor e paixão</span>
-          <br/>
+          <br />
           em cada detalhe.
         </div>
 
@@ -33,21 +33,21 @@ $base = "/Luce-d-Italia/"
 
           <ul>
             <li>
-              <a href="#">
+              <a href="index.php">
                 <i class="bi bi-house-door"></i>
                 <span>Início</span>
               </a>
             </li>
 
             <li>
-              <a href="#">
+              <a href="cardapio.php">
                 <i class="bi bi-map"></i>
                 <span>Cardápio</span>
               </a>
             </li>
 
             <li>
-              <a href="#">
+              <a href="reserva.php">
                 <i class="bi bi-calendar"></i>
                 <span>Reservas</span>
               </a>
