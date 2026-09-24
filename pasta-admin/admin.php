@@ -118,9 +118,9 @@ if ($categoriaPrato == 'todos') {
                     </td>
                     <td>
                       <div class="acao">
-                        <button type="button" class="btnEditar" onclick="abrirModalEditar()">
+                        <a href="./insertIngredientes.php?id='.$estoque['id_ingrediente'].'" type="button" class="btnEditar" >
                           <i class="bi bi-pencil"></i>
-                        </button>
+                        </a>
                         <button class="btn-excluir">
                           <i class="bi bi-trash"></i>
                         </button>
