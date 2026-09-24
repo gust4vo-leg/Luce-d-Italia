@@ -2,10 +2,11 @@ body {
     background: var(--cream);
 }
 
-#cardapio {
+#historico {
     width: 100%;
     overflow: hidden;
 }
+
 
 #hero {
     position: relative;
@@ -107,8 +108,6 @@ body {
     filter: sepia(30%) saturate(100%);
 }
 
-/* FIILTROS */
-
 .filtros-container {
     display: flex;
     justify-content: center;
@@ -130,138 +129,108 @@ body {
     text-decoration: none;
 }
 
-.comidas-container {
+.gridCards {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 20px 0;
-}
-
-.cardapio {
-    padding: 20px;
-}
-
-.title-cardapio {
-    display: flex;
     align-items: center;
-    gap: 20px;
-    justify-content: center;
-    padding: 10px;
-}
-
-.title-cardapio h1 {
-    color: var(--green-light);
-    font-family: var(--font-serif);
-}
-
-.linha-decorativa {
-    position: relative;
-    flex-grow: 1;
-    max-width: 10vw;
-    height: 1px;
-    background-color: var(--gold);
-}
-
-.linha-decorativa::after {
-    content: '';
-    position: absolute;
-    top: -3px;
-    width: 6px;
-    height: 6px;
-    background-color: var(--gold);
-    transform: rotate(45deg);
-}
-
-.linha-decorativa.esquerda::after {
-    right: 0;
-}
-
-.linha-decorativa.direita::after {
-    left: 0;
-}
-
-.card-cardapio {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
     margin-top: 3rem;
 }
 
-.card-comida {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-}
-
-.img-prato {
-    width: 17vw;
-    height: auto;
-}
-
-.img-prato img {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.detalhes-comida {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-    padding: 15px 12px 12px;
-    background: transparent;
-    border-bottom: 1px solid var(--border-gold);
-    border-left: 1px solid var(--border-gold);
-    border-right: 1px solid var(--border-gold);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+.cardHistorico {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-gold);
     display: flex;
     flex-direction: column;
+    width: 70vw;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px 0;
+    align-items: center;
+}
+
+.textLeft h3 {
+    font-family: var(--font-display);
+    color: var(--primary);
+}
+
+.textLeft span {
+    color: var(--text-muted);
+    font-size: .8rem;
+}
+
+.textRight {
+    display: flex;
+    gap: 10px;
+    padding: 7px 10px;
+    background: #9ee49e60;
+    border-radius: 6px;
+    color: var(--secundary);
     align-items: center;
     justify-content: center;
-    gap: 7px;
 }
 
-.titulo-comida {
-    width: 100%;
-    min-width: 0;
-    text-align: center;
+.textRight p,
+.textRight i {
+    font-size: .9rem;
 }
 
-.titulo-comida h2 {
-    width: 100%;
-    margin: 0;
-    color: var(--green-light);
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1.2;
-    text-align: center;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+.divisao-card {
+    width: 65vw;
+    height: 1px;
+    padding: 0;
+    margin: 30px auto 0;
+    border-bottom: 1px solid var(--border-gold-trans);
 }
 
-.descricao-comida {
-    width: 90%;
-    max-width: 280px;
-    margin: 0;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    text-align: center;
-    color: var(--text);
-    overflow-wrap: break-word;
+.cardMain {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 60vw;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 5rem;
 }
 
-.preco-comida {
-    color: var(--wine);
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin-top: 10px;
+.divGroup {
+    border-right: 1px solid var(--border-gold);
+    display: flex;
+    padding: 0 50px;
+    gap: 10px;
 }
 
-.borda-card-comida img {
-    width: 5vw;
-    margin-top: -12px;
+.divGroup label {
+    font-family: var(--font-serif);
+    font-size: .7rem;
+    color: var(--text-muted);
+}
+
+.divGroup i {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.divGroup p {
+    font-size: .9rem;
+}
+
+.cardFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 45px;
+}
+
+.cardFooter label {
+    font-family: var(--font-serif);
+    font-size: .9rem;
+    color: var(--text-muted);
+}
+
+.cardFooter h3 {
+    font-family: var(--font-body);
 }

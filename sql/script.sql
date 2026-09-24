@@ -39,7 +39,7 @@ CREATE TABLE estoques (
     qtd_ingrediente INT NOT NULL,
     categoria ENUM('Vegetais', 'Laticínios', 'Carnes', 'Massas', 'Tempero', 'Bebidas') NOT NULL,
     estoque_min INT NOT NULL,
-    unidade INT NOT NULL
+    unidade ENUM('KG', 'G', 'L', 'ML') NOT NULL
 );
 
 INSERT INTO usuarios (nome, email, senha, telefone, tipo, cpf) VALUES
