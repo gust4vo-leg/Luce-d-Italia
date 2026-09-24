@@ -1,8 +1,6 @@
 <?php
 $base = "/Luce-d-Italia/";
 
-session_start();
-
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }

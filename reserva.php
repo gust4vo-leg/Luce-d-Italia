@@ -1,23 +1,6 @@
 <?php
 session_start();
 
-require_once './crud.php';
-
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $add = [
-        'data_reserva' => $_POST['data'],
-        'horario_reserva' => $_POST['horario'],
-        'quantidade_pessoas' => $_POST['pessoas'],
-        'ambiente_preferido' => $_POST['ambiente'],
-        'nome' => $_POST['nome'],
-        'email' => $_POST['email'],
-        'telefone' => $_POST['telefone'],
-        'observacoes' => $_POST['observacoes']
-    ];
-    create($pdo, 'reservas', $add);
-    header('Location: ./reserva.php');
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <h2>FAÇA SUA RESERVA</h2>
                     </div>
 
-                    <form action="reserva.php" method="POST">
+                    <form action="insertReserva.php" method="POST">
                         <div class="grid-form">
                             <div class="form-group">
                                 <label>DATA DA RESERVA</label>
