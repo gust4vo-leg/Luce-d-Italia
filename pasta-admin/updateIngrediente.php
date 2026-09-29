@@ -52,28 +52,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="linha-modal">
         <div class="campo-modal">
             <label for="categoriaEditar">Categoria</label>
-            <select id="categoriaEditar" name="categoria" value="<?= $ingr['categoria'] ?>" required>
+           <select id="categoriaEditar" name="categoria" required>
                 <option value="">Selecione</option>
-                <option value="vegetais">Vegetais</option>
-                <option value="laticinios">Laticínios</option>
-                <option value="carnes">Carnes</option>
-                <option value="massas">Massas</option>
-                <option value="temperos">Temperos</option>
-                <option value="bebidas">Bebidas</option>
-                <option value="outros">Outros</option>
+                <option value="vegetais" <?= strtolower($ingr['categoria']) == 'vegetais' ? 'selected' : '' ?>>
+                    Vegetais
+                </option>
+                <option value="laticinios" <?= strtolower($ingr['categoria']) == 'laticinios' ? 'selected' : '' ?>>
+                    Laticínios
+                </option>
+                <option value="carnes" <?= strtolower($ingr['categoria']) == 'carnes' ? 'selected' : '' ?>>
+                    Carnes
+                </option>
+                <option value="massas" <?= strtolower($ingr['categoria']) == 'massas' ? 'selected' : '' ?>>
+                    Massas
+                </option>
+                <option value="temperos" <?= strtolower($ingr['categoria']) == 'temperos' ? 'selected' : '' ?>>
+                    Temperos
+                </option>
+                <option value="bebidas" <?= strtolower($ingr['categoria']) == 'bebidas' ? 'selected' : '' ?>>
+                    Bebidas
+                </option>
+                <option value="outros" <?= strtolower($ingr['categoria']) == 'outros' ? 'selected' : '' ?>>
+                    Outros
+                </option>
             </select>
+
         </div>
 
         <div class="campo-modal">
             <label for="unidadeEditar">Unidade</label>
-            <select id="unidadeEditar" name="unidade" value="<?= $ingr['unidade'] ?>" required>
+           <select id="unidadeEditar" name="unidade" required>
                 <option value="">Selecione</option>
-                <option value="kg">Kg</option>
-                <option value="g">Gramas</option>
-                <option value="l">Litros</option>
-                <option value="ml">Mililitros</option>
-                <option value="un">Unidade</option>
+                <option value="kg" <?= strtolower($ingr['unidade']) == 'kg' ? 'selected' : '' ?>>
+                    Kg
+                </option>
+                <option value="g" <?= strtolower($ingr['unidade']) == 'g' ? 'selected' : '' ?>>
+                    Gramas
+                </option>
+                <option value="l" <?= strtolower($ingr['unidade']) == 'l' ? 'selected' : '' ?>>
+                    Litros
+                </option>
+                <option value="ml" <?= strtolower($ingr['unidade']) == 'ml' ? 'selected' : '' ?>>
+                    Mililitros
+                </option>
+                <option value="un" <?= strtolower($ingr['unidade']) == 'un' ? 'selected' : '' ?>>
+                    Unidade
+                </option>
             </select>
+
+
         </div>
     </div>
 

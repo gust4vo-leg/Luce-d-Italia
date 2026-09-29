@@ -118,7 +118,7 @@ if ($categoriaPrato == 'todos') {
                     </td>
                     <td>
                       <div class="acao">
-                        <a href="./insertIngredientes.php?id='.$estoque['id_ingrediente'].'" type="button" class="btnEditar" >
+                        <a href="./updateIngrediente.php?id='.$estoque['id_ingrediente'].'" type="button" class="btnEditar" >
                           <i class="bi bi-pencil"></i>
                         </a>
                         <button class="btn-excluir">
