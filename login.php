@@ -1,7 +1,6 @@
 <?php
 require_once './crud.php';
 session_start();
-print_r($_SESSION);
 
 
 $erro = '';

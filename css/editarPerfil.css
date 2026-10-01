@@ -1,0 +1,347 @@
+body {
+    background-color: var(--cream);
+}
+
+#editar-perfil {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+#hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-centro {
+    width: 100%;
+    padding: 65px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-txt h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: var(--wine);
+    text-align: center;
+}
+
+.hero-bordar-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -55px;
+}
+
+.hero-bordar-txt img {
+    width: 25rem;
+    height: auto;
+}
+
+.details-txt-hero {
+    width: 390px;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.details-txt-hero p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.details-txt-hero strong {
+    color: var(--wine);
+    font-style: italic;
+}
+
+.divisao-hero {
+    width: 30vw;
+    height: 1px;
+    padding: 0;
+    margin: 30px auto 0;
+    border-bottom: 1px solid var(--border-gold-trans);
+}
+
+.hero-right {
+    position: absolute;
+    top: 90px;
+    right: -15px;
+    bottom: -5px;
+    height: 290px;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hero-right img {
+    width: 40vw;
+    opacity: 0.48;
+    filter: sepia(30%) saturate(100%);
+}
+
+.perfil-main {
+    width: 100%;
+    padding: 45px 0 70px;
+    background: #f7f1e5;
+    color: #302a24;
+}
+
+.perfil-container {
+    width: min(1100px, calc(100% - 50px));
+    margin: 0 auto;
+    border: 1px solid #ddceb6;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+}
+
+.perfil-header {
+    text-align: center;
+    padding: 25px 20px 30px;
+}
+
+.perfil-header h1 {
+    margin: 0;
+    color: #921719;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.perfil-header p {
+    margin: 5px 0 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    color: #62594f;
+}
+
+.perfil-ornamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 7px 0 8px;
+}
+
+.perfil-ornamento span {
+    width: 90px;
+    height: 1px;
+    background: #a67d35;
+}
+
+.perfil-ornamento b {
+    color: #a67d35;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.perfil-content {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    min-height: 500px;
+    border-top: 1px solid #ddceb6;
+}
+
+.perfil-sidebar {
+    padding: 35px 25px;
+    border-right: 1px solid #ddceb6;
+    background: rgba(239, 231, 214, 0.45);
+}
+
+.perfil-sidebar h2 {
+    margin: 0;
+    text-align: center;
+    color: #921719;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.perfil-email {
+    margin: 5px 0 0;
+    text-align: center;
+    color: #756b60;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+}
+
+.perfil-menu {
+    margin-top: 35px;
+}
+
+.perfil-menu a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 12px;
+    margin-bottom: 4px;
+    text-decoration: none;
+    color: #38322c;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    transition: 0.2s;
+    border-radius: 6px;
+}
+
+.perfil-menu a:hover {
+    background: #eee2ca;
+    border-radius: 6px;
+}
+
+.perfil-menu a span {
+    width: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.perfil-menu a.ativo {
+    background: #e9ddc4;
+    color: #35623f;
+}
+
+.perfil-menu a.sair {
+    margin-top: 20px;
+    color: #921719;
+}
+
+.perfil-form-area {
+    padding: 40px;
+}
+
+.perfil-form-area h2 {
+    margin: 0 0 4px;
+    color: #921719;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.form-descricao {
+    margin: 0 0 30px;
+    color: #71675c;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+}
+
+.perfil-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    margin-bottom: 7px;
+    color: #403830;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+}
+
+.campo input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    outline: none;
+    border: 1px solid #cfbb98;
+    background: rgba(255, 255, 255, 0.28);
+    color: #302a24;
+    font-family: var(--font-display);
+    font-size: 13px;
+    transition: 0.2s;
+    border-radius: 6px;
+}
+
+.campo input::placeholder {
+    color: #998d7e;
+}
+
+.campo input:focus {
+    border-color: #921719;
+    box-shadow:
+        0 0 0 2px rgba(146, 23, 25, 0.08);
+}
+
+.campo small {
+    margin-top: 6px;
+    color: #82776a;
+    font-family: var(--font-serif);
+    font-size: 10px;
+}
+
+.form-acoes {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+
+.btn-cancelar {
+    height: 44px;
+    padding: 0 25px;
+    border: 1px solid #a68d78;
+    background: transparent;
+    color: #8c181a;
+    font-family: var(--font-display);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 6px;
+}
+
+.btn-cancelar:hover {
+    background: #eee4d2;
+}
+
+.btn-salvar {
+    border-radius: 6px;
+    height: 44px;
+    min-width: 180px;
+    padding: 0 25px;
+    border: none;
+    background: #07552f;
+    color: white;
+    font-family: var(--font-display);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-salvar:hover {
+    background: #064523;
+}
