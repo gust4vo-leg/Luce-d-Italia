@@ -10,7 +10,6 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 ?>
 
 <section class="header">
-  <link rel="stylesheet" href="../css/modal.css">
   <div class="top-header">
     <div class="green">
       <p>TRADIÇÃO, SABOR E PAIXÃO EM CADA DETALHE</p>
@@ -74,58 +73,11 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 
         echo '
         <div class="btn-header">
-            <button type="button" id="abrirPerfil">
-            <div class="sidebar-perfil">
-
-        <div class="elements-perfil">
-    
-            <img src="imagens/logo-perfil.png" alt="Foto de perfil">
-    
-            <div>
-                <h2>Meu Perfil</h2>
-                <p>Breno</p>
-            </div>
-    
+            <a href="' . $base . 'minhas-reservas.php">
+                <i class="bi bi-calendar-check"></i>
+                <p>MINHAS RESERVAS</p>
+            </a>
         </div>
-    
-        <hr>
-    
-    
-        <div class="elements-click">
-    
-            
-            <div class="elements-icon">
-                <i class="bi bi-person-circle"></i>
-    
-                <a href="#">
-                    <h2>Editar Perfil</h2>
-                </a>
-            </div>
-    
-        
-            <div class="elements-icon">
-                <i class="bi bi-clock-history"></i>
-    
-                <a href="#">
-                    <h2>Historico</h2>
-                </a>
-            </div>
-    
-           
-            <div class="elements-icon">
-                <i class="bi bi-power"></i>
-    
-                <a href="#">
-                    <h2>Sair</h2>
-                </a>
-            </div>
-    
-        </div>
-    
-    </div>
-            </button>
-        </div>
-
     ';
       } else {
 
@@ -143,4 +95,3 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
     </nav>
   </header>
 </section>
-<script src="js/perfil.js"></script>
