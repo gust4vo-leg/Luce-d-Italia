@@ -136,6 +136,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
+    gap: 1rem;
 }
 
 .cardHistorico {
@@ -143,8 +144,9 @@ body {
     border-radius: 5px;
     border: 1px solid var(--border-gold);
     display: flex;
-    flex-direction: column;
     width: 70vw;
+    flex-direction: column;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .cardTop {
@@ -168,9 +170,9 @@ body {
     display: flex;
     gap: 10px;
     padding: 7px 10px;
-    background: #9ee49e60;
+    background: var(--border-gold-trans);
     border-radius: 6px;
-    color: var(--secundary);
+    color: var(--text);
     align-items: center;
     justify-content: center;
 }

@@ -1,6 +1,18 @@
 <?php
-require_once '../crud.php';
 
+session_start();
+
+if (!$_SESSION) {
+    header('location: ../login.php');
+    exit;
+}
+
+if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
+    header('location: ../index.php');
+    exit;
+}
+
+require_once '../crud.php';
 
 $id = intval($_GET['id'] ?? 0);
 
@@ -24,8 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: ./admin.php');
     exit;
 }
-
-
 ?>
 
 <!DOCTYPE html>

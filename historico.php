@@ -1,3 +1,24 @@
+<?php 
+require_once './crud.php';
+
+session_start();
+
+if (!$_SESSION) {
+  header('location: ./login.php');
+  // break;
+}
+
+$email = $_SESSION['email'];
+
+$reservas = readAll($pdo, 'reservas', 'email = "' . $email . '"');
+
+$categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
+
+if ($categoria_get === 'Todos') {
+  $categoria_get = '';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -54,25 +75,25 @@
         <div class="filtros-container">
           <div class="filtros">
             <div class="group-filtros">
-              <a href="#">
+              <a href="?categoria=Todos">
                 <i class="bi bi-grid"></i>
                 <p>TODOS</p>
               </a>
             </div>
             <div class="group-filtros">
-              <a href="#">
+              <a href="?categoria=Confirmada">
                 <i class="bi bi-calendar-check"></i>
                 <p>CONFIRMADAS</p>
               </a>
             </div>
             <div class="group-filtros">
-              <a href="#">
+              <a href="?categoria=Pendente">
                 <i class="bi bi-check-circle"></i>
-                <p>REALIZADAS</p>
+                <p>Pendentes</p>
               </a>
             </div>
             <div class="group-filtros">
-              <a href="#">
+              <a href="?categoria=Cancelada">
                 <i class="bi bi-x-circle"></i>
                 <p>CANCELADAS</p>
               </a>
@@ -83,54 +104,65 @@
 
       <section id="cardHistorico">
         <div class="gridCards">
-          <div class="cardHistorico">
-            <div class="cardTop">
-              <div class="textLeft">
-                <h3>RESERVA</h3>
-                <span>28/09/2026 • 20:00</span>
+
+          <?php 
+
+            foreach ($reservas as $reserva) {
+
+              if ($reserva['status_reserva'] === $categoria_get || $categoria_get === '') {
+                print '
+                  <div class="cardHistorico">
+                  <div class="cardTop">
+                <div class="textLeft">
+                  <h3>RESERVA</h3>
+                  <span>'.$reserva['data_reserva'].' • '.$reserva['horario_reserva'].'</span>
+                </div>
+                <div class="textRight">
+                  <i class="bi bi-calendar-check"></i>
+                  <p>'.$reserva['status_reserva'].'</p>
+                </div>
               </div>
-              <div class="textRight">
-                <i class="bi bi-calendar-check"></i>
-                <p>CONFIRMADA</p>
+              <div class="divisao-card"></div>
+              <div class="cardMain">
+                <div class="divGroup">
+                  <i class="bi bi-calendar-check"></i>
+                  <div class="infoCard">
+                    <label>DATA</label>
+                    <p>'.$reserva['data_reserva'].'</p>
+                  </div>
+                </div>
+                <div class="divGroup">
+                  <i class="bi bi-clock"></i>
+                  <div class="infoCard">
+                    <label>HORÁRIO</label>
+                    <p>'.$reserva['horario_reserva'].'</p>
+                  </div>
+                </div>
+                <div class="divGroup">
+                  <i class="bi bi-people"></i>
+                  <div class="infoCard">
+                    <label>PESSOAS</label>
+                    <p>'.$reserva['quantidade_pessoas'].' pessoas</p>
+                  </div>
+                </div>
+                <div class="divGroup">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <div class="infoCard">
+                    <label>AMBIENTE</label>
+                    <p>'.$reserva['ambiente_preferido'].'</p>
+                  </div>
+                </div>
+              </div>
+              <div class="divisao-card"></div>
+              <div class="cardFooter">
+                <label>RESERVA DE: </label>
+                <h3>'.$reserva['nome'].'</h3>
               </div>
             </div>
-            <div class="divisao-card"></div>
-            <div class="cardMain">
-              <div class="divGroup">
-                <i class="bi bi-calendar-check"></i>
-                <div class="infoCard">
-                  <label>DATA</label>
-                  <p>28/090/2026</p>
-                </div>
-              </div>
-              <div class="divGroup">
-                <i class="bi bi-clock"></i>
-                <div class="infoCard">
-                  <label>HORÁRIO</label>
-                  <p>20:00</p>
-                </div>
-              </div>
-              <div class="divGroup">
-                <i class="bi bi-people"></i>
-                <div class="infoCard">
-                  <label>PESSOAS</label>
-                  <p>4 pessoas</p>
-                </div>
-              </div>
-              <div class="divGroup">
-                <i class="bi bi-geo-alt-fill"></i>
-                <div class="infoCard">
-                  <label>AMBIENTE</label>
-                  <p>Interno</p>
-                </div>
-              </div>
-            </div>
-            <div class="divisao-card"></div>
-            <div class="cardFooter">
-              <label>RESERVA DE: </label>
-              <h3>GUILHERME POSSARLE EMANUEL</h3>
-            </div>
-          </div>
+                ';
+            }
+            }
+          ?>
         </div>
       </section>
     </main>

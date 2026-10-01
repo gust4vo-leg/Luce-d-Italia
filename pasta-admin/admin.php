@@ -2,6 +2,18 @@
 
 require_once '../crud.php';
 
+session_start();
+
+if (!$_SESSION) {
+    header('location: ../login.php');
+    exit;
+}
+
+if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
+    header('location: ../index.php');
+    exit;
+}
+
 // INGREDIENTES
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['adicionarIngrediente'])) {
   $nome = trim($_POST['nome']);
@@ -134,7 +146,7 @@ $pratos = array_slice(
   $pratos,
   $inicioPratos,
   $porPaginaPratos
-)
+);
 ?>
 
 <!doctype html>
