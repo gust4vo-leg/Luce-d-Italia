@@ -10,6 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="imagens/logo.png" />
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -93,7 +94,7 @@
                     <p>Pratos preparados com receita tradicional italiana e ingredientes de alta qualidade.</p>
 
                     <div class="link-navegacao">
-                        <a href="janelas/cardapio.html">VER CARDÁPIO &rarr;</a>
+                        <a href="cardapio.php">VER CARDÁPIO &rarr;</a>
                     </div>
                 </div>
 
@@ -106,33 +107,7 @@
                     <p>Reserve sua mesa de forma rápida e prática e tenha uma experiência inesquecível.</p>
 
                     <div class="link-navegacao">
-                        <a href="#reservas">FAZER RESERVA &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="from-group-navegacao delivery">
-                    <div class="icon-navegacao">
-                        <i class="bi bi-scooter"></i>
-                    </div>
-
-                    <h3>DELIVERY</h3>
-                    <p>Peça seus pratos favoritos e receba em casa com rapidez, segurança e muito sabor.</p>
-
-                    <div class="link-navegacao">
-                        <a href="#">PEDIR AGORA &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="from-group-navegacao pedidos">
-                    <div class="icon-navegacao">
-                        <i class="bi bi-clock-history"></i>
-                    </div>
-
-                    <h3>MEUS PEDIDOS</h3>
-                    <p>Acompanhe seu histórico de pedidos e visualize suas compras anteriores.</p>
-
-                    <div class="link-navegacao">
-                        <a href="#">VER HISTÓRICO &rarr;</a>
+                        <a href="reserva.php">FAZER RESERVA &rarr;</a>
                     </div>
                 </div>
 
@@ -172,7 +147,7 @@
                 </div>
 
                 <div class="sobre-acao">
-                    <a href="#" class="btn-sobre">
+                    <a href="sobreNos.php" class="btn-sobre">
                         CONHEÇA MAIS SOBRE NÓS
                         <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true">

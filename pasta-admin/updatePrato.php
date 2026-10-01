@@ -2,38 +2,24 @@
 require_once '../crud.php';
 
 $id = intval($_GET['id'] ?? 0);
-
 $prato = read($pdo, 'pratos', "id_pratos = $id");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $nome = $_POST['nome'] ?? '';
     $categoria = $_POST['categoria'] ?? '';
     $preco = $_POST['preco'] ?? 0;
     $descricao = $_POST['descricao'] ?? '';
-
     $imgPrato = $prato['foto_prato'];
 
-    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+    if (!empty($_FILES['imagem']['name'])) {
+        $nomeImagem = $_FILES['imagem']['name'];
+        $tmpImagem = $_FILES['imagem']['tmp_name'];
+        $pasta = '../imagens/pratos/';
+        $caminho = $pasta . $nomeImagem;
 
-        $arquivo = $_FILES['imagem'];
-        $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
-        $extensoesPermitidas = ['jpg', 'jpeg', 'png', 'webp'];
+        move_uploaded_file($tmpImagem, $caminho);
 
-        if (!in_array($extensao, $extensoesPermitidas)) {
-            die('Formato de imagem inválido.');
-        }
-
-        $novoNome = uniqid() . '.' . $extensao;
-        $pasta = '../img/pratos/';
-
-        if (!is_dir($pasta)) {
-            mkdir($pasta, 0777, true);
-        }
-
-        if (move_uploaded_file($arquivo['tmp_name'], $pasta . $novoNome)) {
-            $imgPrato = $novoNome;
-        }
+        $imgPrato = $caminho;
     }
 
     $dados = [
@@ -42,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'preco' => $preco,
         'descricao' => $descricao,
         'foto_prato' => $imgPrato
+
     ];
 
     update(
@@ -64,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Pratos</title>
+    <link rel="icon" href="../imagens/logo.png" />
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
@@ -112,12 +100,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label for="categoriaPrato">Categoria</label>
                             <select id="categoriaPrato" name="categoria" required>
                                 <option value="">Selecione</option>
-                                <option value="entradas" <?= strtolower($prato['categoria']) == 'entradas' ? 'selected' : '' ?>>Entradas</option>
-                                <option value="massas" <?= strtolower($prato['categoria']) == 'massas' ? 'selected' : '' ?>>Massas</option>
-                                <option value="pizzas" <?= strtolower($prato['categoria']) == 'pizzas' ? 'selected' : '' ?>>Pizzas</option>
-                                <option value="sobremesas" <?= strtolower($prato['categoria']) == 'sobremesas' ? 'selected' : '' ?>>Sobremesas</option>
-                                <option value="bebidas" <?= strtolower($prato['categoria']) == 'bebidas' ? 'selected' : '' ?>>Bebidas</option>
-                                <option value="principal" <?= strtolower($prato['categoria']) == 'principal' ? 'selected' : '' ?>>Prato Principal</option>
+                                <option value="Entradas"
+                                    <?= $prato['categoria'] === 'Entradas' ? 'selected' : '' ?>>
+                                    Entradas
+                                </option>
+
+                                <option value="Pratos Principais"
+                                    <?= $prato['categoria'] === 'Pratos Principais' ? 'selected' : '' ?>>
+                                    Pratos Principais
+                                </option>
+
+                                <option value="Massas"
+                                    <?= $prato['categoria'] === 'Massas' ? 'selected' : '' ?>>
+                                    Massas
+                                </option>
+
+                                <option value="Pizzas"
+                                    <?= $prato['categoria'] === 'Pizzas' ? 'selected' : '' ?>>
+                                    Pizzas
+                                </option>
+
+                                <option value="Sobremesas"
+                                    <?= $prato['categoria'] === 'Sobremesas' ? 'selected' : '' ?>>
+                                    Sobremesas
+                                </option>
+
+                                <option value="Bebidas"
+                                    <?= $prato['categoria'] === 'Bebidas' ? 'selected' : '' ?>>
+                                    Bebidas
+                                </option>
                             </select>
                         </div>
 

@@ -365,6 +365,14 @@ table tbody td {
     font-size: 0.75rem;
 }
 
+.info-prato p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-align: center;
+    color: var(--text);
+    overflow-wrap: break-word;
+}
+
 .info-prato strong {
     display: block;
     margin-top: 4px;
@@ -448,6 +456,55 @@ table tbody td {
 
 .ver-cardapio a:hover {
     color: var(--green);
+}
+
+/* PAGINAÇÃO */
+
+.paginacao-estoque,
+.paginacao-pratos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.paginacao-estoque a,
+.paginacao-pratos a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid var(--border-gold);
+    border-radius: 6px;
+    background-color: var(--cream-soft);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.paginacao-estoque a:hover,
+.paginacao-pratos a:hover {
+    background-color: var(--beige);
+    border-color: var(--gold);
+    color: var(--wine);
+}
+
+.paginacao-estoque a.pagina-ativa,
+.paginacao-pratos a.pagina-ativa {
+    background-color: var(--wine);
+    color: var(--txt-btn);
+    border-color: var(--wine);
+}
+
+.paginacao-estoque a i,
+.paginacao-pratos a i {
+    font-size: 14px;
 }
 
 /* KPIs */

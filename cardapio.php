@@ -18,6 +18,7 @@ if ($categoria_get === 'todos') {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cardápio - Luce D'Italia</title>
+  <link rel="icon" href="imagens/logo.png" />
   <link rel="stylesheet" href="./partials/css/header.css" />
   <link rel="stylesheet" href="./partials/css/footer.css" />
   <link rel="stylesheet" href="./css/global.css" />

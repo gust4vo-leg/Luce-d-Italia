@@ -54,21 +54,7 @@
             </li>
 
             <li>
-              <a href="#">
-                <i class="bi bi-bicycle"></i>
-                <span>Delivery</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
-                <i class="bi bi-cart3"></i>
-                <span>Carrinho</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
+              <a href="historico.php">
                 <i class="bi bi-clock"></i>
                 <span>Histórico de Pedidos</span>
               </a>
@@ -92,7 +78,7 @@
         <div class="atendimento-lista">
           <div class="info-item">
             <i class="bi bi-telephone-fill"></i>
-            <span>(11) 99999-9999</span>
+            <span>+55 11 93056-9806</span>
           </div>
 
           <div class="info-item">
@@ -120,7 +106,7 @@
           </div>
         </div>
 
-        <a href="#" class="reserva-footer">
+        <a href="reserva.php" class="reserva-footer">
           <i class="bi bi-cloud-fog"></i>
           <span>
             Faça sua <strong>reserva</strong> e garanta<br />
@@ -145,7 +131,7 @@
             <span>Facebook</span>
           </a>
 
-          <a href="#">
+          <a href="https://api.whatsapp.com/send/?phone=5511930569806&text&type=phone_number&app_absent=0" target="_blank">
             <i class="bi bi-whatsapp"></i>
             <span>WhatsApp</span>
           </a>

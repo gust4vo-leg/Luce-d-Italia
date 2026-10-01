@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['adicionarPrato'])) {
   $nomeImagem = time() . '_' . basename($imagem['name']);
   $caminho = $pasta . $nomeImagem;
   move_uploaded_file($imagem['tmp_name'], $caminho);
-  
+
   create($pdo, 'pratos', [
     'nome_prato' => $nomePrato,
     'categoria' => $categoriaPrato,
@@ -63,13 +63,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirPrato'])) {
   exit;
 }
 
-$estoques = readAll($pdo, 'estoques');
+$estoquesTodos = readAll($pdo, 'estoques');
 
 $estoqueTotal = 0;
 
-foreach ($estoques as $estoque) {
+foreach ($estoquesTodos as $estoque) {
   $estoqueTotal += $estoque['qtd_ingrediente'];
 }
+
+// PAGINAÇÃO ESTOQUE
+$porPaginaEstoque = 6;
+$paginaEstoque = isset($_GET['paginaEstoque']) ? (int)$_GET['paginaEstoque'] : 1;
+if ($paginaEstoque < 1) {
+  $paginaEstoque = 1;
+}
+
+$totalEstoque = count($estoquesTodos);
+
+$totalPaginasEstoque = ceil($totalEstoque / $porPaginaEstoque);
+
+if ($paginaEstoque > $totalPaginasEstoque && $totalPaginasEstoque > 0) {
+  $paginaEstoque = $totalPaginasEstoque;
+}
+
+$inicioEstoque = ($paginaEstoque - 1) * $porPaginaEstoque;
+
+$estoques = array_slice(
+  $estoquesTodos,
+  $inicioEstoque,
+  $porPaginaEstoque
+);
+
+// PAGINAÇÃO PRATOS
 
 $pratosTodos = readAll($pdo, 'pratos');
 $pratoTotal = count($pratosTodos);
@@ -86,6 +111,30 @@ if ($categoriaPrato === 'todos') {
     }
   }
 }
+
+$porPaginaPratos = 8;
+
+$paginaPratos = isset($_GET['paginaPratos'])
+  ? (int)$_GET['paginaPratos']
+  : 1;
+
+if ($paginaPratos < 1) {
+  $paginaPratos = 1;
+}
+
+$totalPaginasPratos = ceil($pratoTotal / $porPaginaPratos);
+
+if ($paginaPratos > $totalPaginasPratos && $totalPaginasPratos > 0) {
+  $paginaPratos = $totalPaginasPratos;
+}
+
+$inicioPratos = ($paginaPratos - 1) * $porPaginaPratos;
+
+$pratos = array_slice(
+  $pratos,
+  $inicioPratos,
+  $porPaginaPratos
+)
 ?>
 
 <!doctype html>
@@ -102,6 +151,7 @@ if ($categoriaPrato === 'todos') {
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" href="../imagens/logo.png"/>
 </head>
 
 <body id="pagina">
@@ -196,6 +246,43 @@ if ($categoriaPrato === 'todos') {
             ?>
           </tbody>
         </table>
+
+        <?php
+        print '
+          <div class="paginacao-estoque">
+        ';
+
+        if ($paginaEstoque > 1) {
+          print '
+            <a href="?paginaEstoque=' . ($paginaEstoque - 1) . '">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+          ';
+        }
+
+        for ($i = 1; $i <= $totalPaginasEstoque; $i++) {
+
+          $classeAtiva = ($i == $paginaEstoque) ? 'pagina-ativa' : '';
+
+          print '
+            <a href="?paginaEstoque=' . $i . '" class="' . $classeAtiva . '">
+              ' . $i . '
+            </a>
+          ';
+        }
+
+        if ($paginaEstoque < $totalPaginasEstoque) {
+          print '
+            <a href="?paginaEstoque=' . ($paginaEstoque + 1) . '">
+              <i class="bi bi-chevron-right"></i>
+            </a>
+          ';
+        }
+
+        print '
+          </div>
+        ';
+        ?>
       </div>
     </section>
 
@@ -233,7 +320,7 @@ if ($categoriaPrato === 'todos') {
 
         <div class="grid-cardapio">
           <?php
-          foreach ($pratosTodos as $prato) {
+          foreach ($pratos as $prato) {
             print '
                <div class="card-prato" data-categoria="pizzas">
                   <div class="foto-prato">
@@ -244,6 +331,7 @@ if ($categoriaPrato === 'todos') {
                     <div class="info-prato">
                       <h3>' . $prato["nome_prato"] . '</h3>
                       <span>' . $prato["categoria"] . '</span>
+                      <p> ' . $prato['descricao'] . ' </p>
                       <strong>' . $prato["preco"] . '</strong>
                     </div>
 
@@ -266,8 +354,45 @@ if ($categoriaPrato === 'todos') {
           ?>
         </div>
 
+        <?php
+        print '
+            <div class="paginacao-pratos">
+          ';
+
+        if ($paginaPratos > 1) {
+          print '
+              <a href="?paginaPratos=' . ($paginaPratos - 1) . '&paginaEstoque=' . $paginaEstoque . '&categoria=' . urlencode($categoriaPrato) . '">
+                <i class="bi bi-chevron-left"></i>
+              </a>
+            ';
+        }
+
+        for ($i = 1; $i <= $totalPaginasPratos; $i++) {
+
+          $classeAtiva = ($i == $paginaPratos) ? 'pagina-ativa' : '';
+
+          print '
+              <a href="?paginaPratos=' . $i . '&paginaEstoque=' . $paginaEstoque . '&categoria=' . urlencode($categoriaPrato) . '" class="' . $classeAtiva . '">
+                ' . $i . '
+              </a>
+            ';
+        }
+
+        if ($paginaPratos < $totalPaginasPratos) {
+          print '
+              <a href="?paginaPratos=' . ($paginaPratos + 1) . '&paginaEstoque=' . $paginaEstoque . '&categoria=' . urlencode($categoriaPrato) . '">
+                <i class="bi bi-chevron-right"></i>
+              </a>
+            ';
+        }
+
+        print '
+            </div>
+          ';
+        ?>
+
         <div class="ver-cardapio">
-          <a href="cardapio.php">
+          <a href="../cardapio.php">
             Ver todos os pratos do cardápio
             <i class="bi bi-chevron-right"></i>
           </a>
