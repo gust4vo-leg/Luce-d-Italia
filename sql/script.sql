@@ -38,7 +38,6 @@ CREATE TABLE estoques (
     nome_ingredientes VARCHAR(100) NOT NULL,
     qtd_ingrediente INT NOT NULL,
     categoria ENUM('Vegetais', 'Laticínios', 'Carnes', 'Massas', 'Tempero', 'Bebidas') NOT NULL,
-    estoque_min INT NOT NULL,
     unidade ENUM('KG', 'G', 'L', 'ML') NOT NULL
 );
 

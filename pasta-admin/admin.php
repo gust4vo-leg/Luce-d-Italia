@@ -2,6 +2,33 @@
 
 require_once '../crud.php';
 
+// INGREDIENTES
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['adicionarIngrediente'])) {
+  $nome = trim($_POST['nome']);
+  $categoria = $_POST['categoria'];
+  $unidade = $_POST['unidade'];
+  $quantidade = $_POST['quantidade'];
+
+  create($pdo, 'estoques', [
+    'nome_ingredientes' => $nome,
+    'qtd_ingrediente' => $quantidade,
+    'categoria' => $categoria,
+    'unidade' => $unidade
+  ]);
+
+  header('Location: admin.php');
+  exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirIngrediente'])) {
+  $id = $_POST['excluirIngrediente'];
+
+  delete($pdo, 'estoques', 'id_ingrediente =' . (int)$id);
+
+  header('Location: admin.php');
+  exit;
+}
+
 $estoques = readAll($pdo, 'estoques');
 
 $estoqueTotal = 0;
@@ -122,9 +149,11 @@ if ($categoriaPrato === 'todos') {
                         <a href="./updateIngrediente.php?id=' . $estoque['id_ingrediente'] . '" type="button" class="btnEditar" >
                           <i class="bi bi-pencil"></i>
                         </a>
-                        <button class="btn-excluir">
-                          <i class="bi bi-trash"></i>
-                        </button>
+                        <form method="POST" action="admin.php">
+                            <button class="btn-excluir" type="submit" name="excluirIngrediente" value="' . $estoque['id_ingrediente'] . '">
+                            <i class="bi bi-trash"></i>
+                          </button>
+                        </form>
                       </div>
                     </td>
                   </tr>
@@ -253,7 +282,7 @@ if ($categoriaPrato === 'todos') {
           </button>
         </div>
 
-        <form id="formIngrediente">
+        <form id="formIngrediente" method="POST" action="admin.php">
           <div class="campo-modal">
             <label for="nomeIngrediente">
               Nome do ingrediente
@@ -270,12 +299,12 @@ if ($categoriaPrato === 'todos') {
 
               <select id="categoriaIngrediente" name="categoria" required>
                 <option value="">Selecione</option>
-                <option value="vegetais">Vegetais</option>
-                <option value="laticinios">Laticínios</option>
-                <option value="carnes">Carnes</option>
-                <option value="massas">Massas</option>
-                <option value="temperos">Temperos</option>
-                <option value="bebidas">Bebidas</option>
+                <option value="Vegetais">Vegetais</option>
+                <option value="Laticinios">Laticínios</option>
+                <option value="Carnes">Carnes</option>
+                <option value="Massas">Massas</option>
+                <option value="Temperos">Temperos</option>
+                <option value="Bebidas">Bebidas</option>
                 <option value="outros">Outros</option>
               </select>
             </div>
@@ -287,11 +316,10 @@ if ($categoriaPrato === 'todos') {
 
               <select id="unidadeIngrediente" name="unidade" required>
                 <option value="">Selecione</option>
-                <option value="kg">Kg</option>
-                <option value="g">Gramas</option>
-                <option value="l">Litros</option>
-                <option value="ml">Mililitros</option>
-                <option value="un">Unidade</option>
+                <option value="KG">Kg</option>
+                <option value="G">Gramas</option>
+                <option value="L">Litros</option>
+                <option value="ML">Mililitros</option>
               </select>
             </div>
           </div>
@@ -319,7 +347,7 @@ if ($categoriaPrato === 'todos') {
               Cancelar
             </button>
 
-            <button type="submit" class="btn-salvar">
+            <button type="submit" name="adicionarIngrediente" class="btn-salvar">
               <i class="bi bi-check-lg"></i>
               Adicionar Ingrediente
             </button>
