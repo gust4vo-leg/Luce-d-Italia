@@ -90,95 +90,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>Atualize suas informações pessoais.</p>
             </div>
 
-            <div class="perfil-content">
-                <aside class="perfil-sidebar">
-                    <h2>Silas Carvalho</h2>
+            <section class="perfil-form-area">
+                <h2>INFORMAÇÕES PESSOAIS</h2>
 
-                    <p class="perfil-email">
-                        silas@email.com
-                    </p>
+                <p class="form-descricao">
+                    Mantenha seus dados sempre atualizados.
+                </p>
 
-                    <div class="perfil-menu">
-                        <a href="#" class="ativo">
-                            <span><i class="bi bi-person"></i></span>
-                            Meu Perfil
-                        </a>
-
-                        <a href="#">
-                            <span><i class="bi bi-calendar"></i></span>
-                            Minhas Reservas
-                        </a>
-
-                        <a href="#">
-                            <span><i class="bi bi-journal"></i></span>
-                            Meus Pedidos
-                        </a>
-
-                        <a href="#" class="sair">
-                            <span>↪</span>
-                            Sair da Conta
-                        </a>
-
+                <form class="perfil-form" method="POST" action="./editarPerfil.php">
+                    <div class="campo">
+                        <label for="nome">
+                            NOME COMPLETO
+                        </label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome"
+                            value="<?= $usuario['nome'] ?>">
                     </div>
 
-                </aside>
+                    <div class="campo">
+                        <label for="email">
+                            E-MAIL
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail"
+                            value="<?= $usuario['email'] ?>">
+                    </div>
 
-                <section class="perfil-form-area">
-                    <h2>INFORMAÇÕES PESSOAIS</h2>
-
-                    <p class="form-descricao">
-                        Mantenha seus dados sempre atualizados.
-                    </p>
-
-                    <form class="perfil-form" method="POST" action="./editarPerfil.php">
-                        <div class="campo">
-                            <label for="nome">
-                                NOME COMPLETO
-                            </label>
-                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome"
-                                value="<?= $usuario['nome'] ?>">
-                        </div>
-
-                        <div class="campo">
-                            <label for="email">
-                                E-MAIL
-                            </label>
-                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail"
-                                value="<?= $usuario['email'] ?>">
-                        </div>
-
-                        <div class="campo">
-                            <label for="telefone">
-                                TELEFONE
-                            </label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
-                                value="<?= $usuario['telefone'] ?>">
-                        </div>
+                    <div class="campo">
+                        <label for="telefone">
+                            TELEFONE
+                        </label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+                            value="<?= $usuario['telefone'] ?>">
+                    </div>
 
 
-                        <div class="campo">
-                            <label for="senha">
-                                SENHA
-                            </label>
-                            <input type="password" id="senha" name="senha" placeholder="Digite sua nova senha">
-                            <small>
-                                Deixe em branco para manter a senha atual.
-                            </small>
-                        </div>
+                    <div class="campo">
+                        <label for="senha">
+                            SENHA
+                        </label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua nova senha">
+                        <small>
+                            Deixe em branco para manter a senha atual.
+                        </small>
+                    </div>
 
 
-                        <div class="form-acoes">
-                            <button type="reset" class="btn-cancelar">
-                                CANCELAR
-                            </button>
+                    <div class="form-acoes">
+                        <button type="reset" class="btn-cancelar">
+                            CANCELAR
+                        </button>
 
-                            <button type="submit" class="btn-salvar">
-                                SALVAR ALTERAÇÕES
-                            </button>
-                        </div>
-                    </form>
-                </section>
-            </div>
+                        <button type="submit" class="btn-salvar">
+                            SALVAR ALTERAÇÕES
+                        </button>
+                    </div>
+                </form>
+            </section>
         </div>
     </main>
 

@@ -186,3 +186,19 @@ header {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+
+.btn-perfil {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: var(--wine);
+  color: var(--terciary);
+  border: none;
+  padding: 10px 15px;
+}
+
+.btn-perfil:hover {
+  background: var(--primary);
+}
