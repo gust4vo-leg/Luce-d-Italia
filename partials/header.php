@@ -141,7 +141,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                             Minhas Reservas
                         </a>
                     <?php elseif ($tipo_usuario === 'admin'): ?>
-                        <a href="admin.php">
+                        <a href="<?= $base ?>/pasta-admin/admin.php">
                             <i class="bi bi-speedometer2"></i>
                             Dashboard
                         </a>
