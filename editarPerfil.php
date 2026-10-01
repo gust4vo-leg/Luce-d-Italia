@@ -130,12 +130,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Mantenha seus dados sempre atualizados.
                     </p>
 
-                    <form class="perfil-form">
+                    <form class="perfil-form" method="POST" action="./editarPerfil.php">
                         <div class="campo">
                             <label for="nome">
                                 NOME COMPLETO
                             </label>
-                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" value="<?= $usuario['nome'] ?>">
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome"
+                                value="<?= $usuario['nome'] ?>">
                         </div>
 
                         <div class="campo">
@@ -143,15 +144,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 E-MAIL
                             </label>
                             <input type="email" id="email" name="email" placeholder="Digite seu e-mail"
-                                value="<?= $usuario['email']?>">
+                                value="<?= $usuario['email'] ?>">
                         </div>
 
                         <div class="campo">
                             <label for="telefone">
                                 TELEFONE
                             </label>
-                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" value="<?= $usuario['telefone'] ?>">
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+                                value="<?= $usuario['telefone'] ?>">
                         </div>
+
 
                         <div class="campo">
                             <label for="senha">
