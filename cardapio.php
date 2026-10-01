@@ -6,7 +6,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 $pratos = readAll($pdo, 'pratos');
 
 if ($categoria_get === 'todos') {
-    $categoria_get = '';
+  $categoria_get = '';
 }
 
 ?>
@@ -30,9 +30,9 @@ if ($categoria_get === 'todos') {
 </head>
 
 <body>
-    <?php 
-      require_once './partials/header.php';
-    ?>
+  <?php
+  require_once './partials/header.php';
+  ?>
 
   <main id="cardapio">
     <section id="hero">
@@ -57,7 +57,7 @@ if ($categoria_get === 'todos') {
           <img src="imagens/imgHero.png">
         </div>
       </div>
-      
+
       <div class="divisao-hero"></div>
     </section>
 
@@ -115,26 +115,26 @@ if ($categoria_get === 'todos') {
 
         <?php if ($categoria_get === '' || $categoria_get === 'Entradas'): ?>
 
-        <div class="cardapio">
-          <div class="title-cardapio">
-            <div class="linha-decorativa esquerda"></div>
-            <h1>ENTRADAS</h1>
-            <div class="linha-decorativa direita"></div>
-          </div>
-    
-          <div class="card-cardapio">
-            <?php 
+          <div class="cardapio">
+            <div class="title-cardapio">
+              <div class="linha-decorativa esquerda"></div>
+              <h1>ENTRADAS</h1>
+              <div class="linha-decorativa direita"></div>
+            </div>
+
+            <div class="card-cardapio">
+              <?php
               foreach ($pratos as $prato) {
-                if($prato['categoria'] === "Entradas") {
+                if ($prato['categoria'] === "Entradas") {
                   print '
                     <div class="card-comida">
                       <div class="img-prato">
-                        <img src="'.$prato["foto_prato"].'">
+                        <img src="' . str_replace("../", "", $prato["foto_prato"]) . '">
                       </div>
 
                       <div class="detalhes-comida">
                         <div class="titulo-comida">
-                          <h2>'.$prato["nome_prato"].'</h2>
+                          <h2>' . $prato["nome_prato"] . '</h2>
                         </div>
 
                         <div class="descricao-comida">
@@ -144,7 +144,7 @@ if ($categoria_get === 'todos') {
                         </div>
 
                         <div class="preco-comida">
-                          <p>R$ '.$prato["preco"].'</p>
+                          <p>R$ ' . $prato["preco"] . '</p>
                         </div>
 
                         <div class="borda-card-comida">
@@ -157,34 +157,34 @@ if ($categoria_get === 'todos') {
                   ';
                 }
               }
-            ?>
+              ?>
+            </div>
           </div>
-        </div>
 
-        <?php endif; ?> 
+        <?php endif; ?>
 
         <?php if ($categoria_get === '' || $categoria_get === 'Pratos Principais'): ?>
 
-        <div class="cardapio">
-          <div class="title-cardapio">
-            <div class="linha-decorativa esquerda"></div>
-            <h1>PRATOS PRINCIPAIS</h1>
-            <div class="linha-decorativa direita"></div>
-          </div>
+          <div class="cardapio">
+            <div class="title-cardapio">
+              <div class="linha-decorativa esquerda"></div>
+              <h1>PRATOS PRINCIPAIS</h1>
+              <div class="linha-decorativa direita"></div>
+            </div>
 
-          <div class="card-cardapio">
-            <?php 
+            <div class="card-cardapio">
+              <?php
               foreach ($pratos as $prato) {
-                if($prato['categoria'] === "Pratos Principais") {
+                if ($prato['categoria'] === "Pratos Principais") {
                   print '
                     <div class="card-comida">
                       <div class="img-prato">
-                        <img src="./imagens/'.$prato["foto_prato"].'">
+                        <img src="./imagens/' . $prato["foto_prato"] . '">
                       </div>
 
                       <div class="detalhes-comida">
                         <div class="titulo-comida">
-                          <h2>'.$prato["nome_prato"].'</h2>
+                          <h2>' . $prato["nome_prato"] . '</h2>
                         </div>
 
                         <div class="descricao-comida">
@@ -194,7 +194,7 @@ if ($categoria_get === 'todos') {
                         </div>
 
                         <div class="preco-comida">
-                          <p>R$ '.$prato["preco"].'</p>
+                          <p>R$ ' . $prato["preco"] . '</p>
                         </div>
 
                         <div class="borda-card-comida">
@@ -205,34 +205,34 @@ if ($categoria_get === 'todos') {
                   ';
                 }
               }
-            ?>
+              ?>
+            </div>
           </div>
-        </div>
 
-        <?php endif; ?> 
+        <?php endif; ?>
 
         <?php if ($categoria_get === '' || $categoria_get === 'Massas'): ?>
 
-        <div class="cardapio">
-          <div class="title-cardapio">
-            <div class="linha-decorativa esquerda"></div>
-            <h1>MASSAS</h1>
-            <div class="linha-decorativa direita"></div>
-          </div>
+          <div class="cardapio">
+            <div class="title-cardapio">
+              <div class="linha-decorativa esquerda"></div>
+              <h1>MASSAS</h1>
+              <div class="linha-decorativa direita"></div>
+            </div>
 
-          <div class="card-cardapio">
-            <?php 
+            <div class="card-cardapio">
+              <?php
               foreach ($pratos as $prato) {
-                if($prato['categoria'] === "Massas") {
+                if ($prato['categoria'] === "Massas") {
                   print '
                     <div class="card-comida">
                       <div class="img-prato">
-                        <img src="'.$prato["foto_prato"].'">
+                        <img src="' . str_replace("../", "", $prato["foto_prato"]) . '">
                       </div>
 
                       <div class="detalhes-comida">
                         <div class="titulo-comida">
-                          <h2>'.$prato["nome_prato"].'</h2>
+                          <h2>' . $prato["nome_prato"] . '</h2>
                         </div>
 
                         <div class="descricao-comida">
@@ -242,7 +242,7 @@ if ($categoria_get === 'todos') {
                         </div>
 
                         <div class="preco-comida">
-                          <p>R$ '.$prato["preco"].'</p>
+                          <p>R$ ' . $prato["preco"] . '</p>
                         </div>
 
                         <div class="borda-card-comida">
@@ -253,34 +253,34 @@ if ($categoria_get === 'todos') {
                   ';
                 }
               }
-            ?>
+              ?>
+            </div>
           </div>
-        </div>
 
-        <?php endif; ?> 
+        <?php endif; ?>
 
         <?php if ($categoria_get === '' || $categoria_get === 'Pizzas'): ?>
 
-        <div class="cardapio">
-          <div class="title-cardapio">
-            <div class="linha-decorativa esquerda"></div>
-            <h1>PIZZAS</h1>
-            <div class="linha-decorativa direita"></div>
-          </div>
+          <div class="cardapio">
+            <div class="title-cardapio">
+              <div class="linha-decorativa esquerda"></div>
+              <h1>PIZZAS</h1>
+              <div class="linha-decorativa direita"></div>
+            </div>
 
-          <div class="card-cardapio">
-            <?php 
+            <div class="card-cardapio">
+              <?php
               foreach ($pratos as $prato) {
-                if($prato['categoria'] === "Pizzas") {
+                if ($prato['categoria'] === "Pizzas") {
                   print '
                     <div class="card-comida">
                       <div class="img-prato">
-                        <img src="'.$prato["foto_prato"].'">
+                        <img src="' . str_replace("../", "", $prato["foto_prato"]) . '">
                       </div>
 
                       <div class="detalhes-comida">
                         <div class="titulo-comida">
-                          <h2>'.$prato["nome_prato"].'</h2>
+                          <h2>' . $prato["nome_prato"] . '</h2>
                         </div>
 
                         <div class="descricao-comida">
@@ -290,7 +290,7 @@ if ($categoria_get === 'todos') {
                         </div>
 
                         <div class="preco-comida">
-                          <p>R$ '.$prato["preco"].'</p>
+                          <p>R$ ' . $prato["preco"] . '</p>
                         </div>
 
                         <div class="borda-card-comida">
@@ -303,34 +303,34 @@ if ($categoria_get === 'todos') {
                   ';
                 }
               }
-            ?>
+              ?>
+            </div>
           </div>
-        </div>
 
-        <?php endif; ?> 
+        <?php endif; ?>
 
         <?php if ($categoria_get === '' || $categoria_get === 'Sobremesas'): ?>
 
-        <div class="cardapio">
-          <div class="title-cardapio">
-            <div class="linha-decorativa esquerda"></div>
-            <h1>SOBREMESAS</h1>
-            <div class="linha-decorativa direita"></div>
-          </div>
+          <div class="cardapio">
+            <div class="title-cardapio">
+              <div class="linha-decorativa esquerda"></div>
+              <h1>SOBREMESAS</h1>
+              <div class="linha-decorativa direita"></div>
+            </div>
 
-          <div class="card-cardapio">
-            <?php 
+            <div class="card-cardapio">
+              <?php
               foreach ($pratos as $prato) {
-                if($prato['categoria'] === "Sobremesas") {
+                if ($prato['categoria'] === "Sobremesas") {
                   print '
                     <div class="card-comida">
                       <div class="img-prato">
-                        <img src="'.$prato["foto_prato"].'">
+                        <img src="' . str_replace("../", "", $prato["foto_prato"]) . '">
                       </div>
 
                       <div class="detalhes-comida">
                         <div class="titulo-comida">
-                          <h2>'.$prato["nome_prato"].'</h2>
+                          <h2>' . $prato["nome_prato"] . '</h2>
                         </div>
 
                         <div class="descricao-comida">
@@ -340,7 +340,7 @@ if ($categoria_get === 'todos') {
                         </div>
 
                         <div class="preco-comida">
-                          <p>R$ '.$prato["preco"].'</p>
+                          <p>R$ ' . $prato["preco"] . '</p>
                         </div>
 
                         <div class="borda-card-comida">
@@ -353,34 +353,34 @@ if ($categoria_get === 'todos') {
                   ';
                 }
               }
-            ?>
+              ?>
+            </div>
           </div>
-        </div>
 
-        <?php endif; ?> 
+        <?php endif; ?>
 
         <?php if ($categoria_get === '' || $categoria_get === 'Bebidas'): ?>
 
-        <div class="cardapio">
-          <div class="title-cardapio">
-            <div class="linha-decorativa esquerda"></div>
-            <h1>BEBIDAS</h1>
-            <div class="linha-decorativa direita"></div>
-          </div>
+          <div class="cardapio">
+            <div class="title-cardapio">
+              <div class="linha-decorativa esquerda"></div>
+              <h1>BEBIDAS</h1>
+              <div class="linha-decorativa direita"></div>
+            </div>
 
-          <div class="card-cardapio">
-            <?php 
+            <div class="card-cardapio">
+              <?php
               foreach ($pratos as $prato) {
-                if($prato['categoria'] === "Bebidas") {
+                if ($prato['categoria'] === "Bebidas") {
                   print '
                     <div class="card-comida">
                       <div class="img-prato">
-                        <img src="'.$prato["foto_prato"].'">
+                        <img src="' . str_replace("../", "", $prato["foto_prato"]) . '">
                       </div>
 
                       <div class="detalhes-comida">
                         <div class="titulo-comida">
-                          <h2>'.$prato["nome_prato"].'</h2>
+                          <h2>' . $prato["nome_prato"] . '</h2>
                         </div>
 
                         <div class="descricao-comida">
@@ -390,7 +390,7 @@ if ($categoria_get === 'todos') {
                         </div>
 
                         <div class="preco-comida">
-                          <p>R$ '.$prato["preco"].'</p>
+                          <p>R$ ' . $prato["preco"] . '</p>
                         </div>
 
                         <div class="borda-card-comida">
@@ -403,20 +403,20 @@ if ($categoria_get === 'todos') {
                   ';
                 }
               }
-            ?>
+              ?>
+            </div>
           </div>
-        </div>
 
-        <?php endif; ?> 
+        <?php endif; ?>
 
         <br><br><br>
       </div>
     </section>
   </main>
 
- <?php 
-      require_once './partials/footer.php';
-    ?>
+  <?php
+  require_once './partials/footer.php';
+  ?>
 </body>
 
 </html>

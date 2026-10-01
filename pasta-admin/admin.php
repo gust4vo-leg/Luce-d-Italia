@@ -29,6 +29,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirIngrediente'])
   exit;
 }
 
+// PRATOS
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['adicionarPrato'])) {
+  $nomePrato = trim($_POST['nome']);
+  $categoriaPrato = $_POST['categoria'];
+  $preco = $_POST['preco'];
+  $descricao = trim($_POST['descricao']);
+
+  $imagem = $_FILES['imagem'];
+  $pasta = '../imagens/pratos/';
+  $nomeImagem = time() . '_' . basename($imagem['name']);
+  $caminho = $pasta . $nomeImagem;
+  move_uploaded_file($imagem['tmp_name'], $caminho);
+  
+  create($pdo, 'pratos', [
+    'nome_prato' => $nomePrato,
+    'categoria' => $categoriaPrato,
+    'preco' => $preco,
+    'descricao' => $descricao,
+    'foto_prato' => $caminho
+  ]);
+
+  header('Location: admin.php');
+  exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirPrato'])) {
+  $idPrato = $_POST['excluirPrato'];
+
+  delete($pdo, 'pratos', 'id_pratos =' . (int)$idPrato);
+
+  header('Location: admin.php');
+  exit;
+}
+
 $estoques = readAll($pdo, 'estoques');
 
 $estoqueTotal = 0;
@@ -219,10 +253,11 @@ if ($categoriaPrato === 'todos') {
                         Editar
                       </a>
 
-                      <button type="button" class="btn-excluir-prato">
-                        <i class="bi bi-trash"></i>
-                        Excluir
-                      </button>
+                      <form method="POST" action="admin.php">
+                        <button class="btn-excluir-prato" type="submit" name="excluirPrato" value="' . $prato['id_pratos'] . '">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -371,7 +406,7 @@ if ($categoriaPrato === 'todos') {
           </button>
         </div>
 
-        <form id="formPrato">
+        <form id="formPrato" action="admin.php" method="POST" enctype="multipart/form-data">
           <div class="campo-modal">
             <label for="nomePrato">Nome do prato</label>
             <input type="text" id="nomePrato" name="nome" placeholder="Ex: Spaghetti al Pomodoro" required>
@@ -382,10 +417,12 @@ if ($categoriaPrato === 'todos') {
               <label for="categoriaPrato">Categoria</label>
               <select id="categoriaPrato" name="categoria" required>
                 <option value="">Selecione</option>
-                <option value="entradas">Entradas</option>
-                <option value="massas">Massas</option>
-                <option value="pizzas">Pizzas</option>
-                <option value="sobremesas">Sobremesas</option>
+                <option value="Entradas">Entradas</option>
+                <option value="Massas">Massas</option>
+                <option value="Pizzas">Pizzas</option>
+                <option value="Sobremesas">Sobremesas</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Principal">Prato Principal</option>
               </select>
             </div>
 
@@ -418,7 +455,7 @@ if ($categoriaPrato === 'todos') {
               Cancelar
             </button>
 
-            <button type="submit" class="btn-salvar">
+            <button type="submit" class="btn-salvar" name="adicionarPrato">
               <i class="bi bi-check-lg"></i>
               Adicionar Prato
             </button>
