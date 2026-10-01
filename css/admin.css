@@ -380,6 +380,22 @@ table tbody td {
     gap: 8px;
 }
 
+.acoes-prato a {
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: 0.2s ease;
+    width: 6vw;
+    border-radius: 5px;
+    border: 1px solid var(--border-soft);
+    color: var(--green-light);
+}
+
 .acoes-prato button {
     height: 30px;
     border-radius: 5px;
@@ -393,11 +409,6 @@ table tbody td {
     gap: 5px;
     transition: 0.2s ease;
     width: 6vw;
-}
-
-.btn-editar {
-    border: 1px solid var(--border-soft);
-    color: var(--green-light);
 }
 
 .btn-editar:hover {

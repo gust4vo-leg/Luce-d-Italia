@@ -4,25 +4,26 @@ require_once '../crud.php';
 
 $estoques = readAll($pdo, 'estoques');
 
-$sql = "SELECT SUM(qtd_ingrediente) AS estoque_total FROM estoques";
-$stmt = $pdo->query($sql);
-$estoqueTotal = $stmt->fetch(PDO::FETCH_ASSOC)['estoque_total'];
+$estoqueTotal = 0;
 
-$sql = "SELECT COUNT(id_pratos) AS prato_total FROM pratos";
-$stmt = $pdo->query($sql);
-$pratoTotal = $stmt->fetch(PDO::FETCH_ASSOC)['prato_total'];
+foreach ($estoques as $estoque) {
+  $estoqueTotal += $estoque['qtd_ingrediente'];
+}
+
+$pratosTodos = readAll($pdo, 'pratos');
+$pratoTotal = count($pratosTodos);
 
 $categoriaPrato = $_GET['categoria'] ?? 'todos';
 
-if ($categoriaPrato == 'todos') {
-  $pratos = readAll($pdo, 'pratos');
+if ($categoriaPrato === 'todos') {
+  $pratos = $pratosTodos;
 } else {
-  $sql = "SELECT * FROM pratos WHERE categoria = :categoria";
-
-  $stmt = $pdo -> prepare($sql);
-  $stmt -> execute(['categoria' => $categoriaPrato]);
-
-  $pratos = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+  $pratos = [];
+  foreach ($pratosTodos as $prato) {
+    if ($prato['categoria'] === $categoriaPrato) {
+      $pratos[] = $prato;
+    }
+  }
 }
 ?>
 
@@ -118,7 +119,7 @@ if ($categoriaPrato == 'todos') {
                     </td>
                     <td>
                       <div class="acao">
-                        <a href="./updateIngrediente.php?id='.$estoque['id_ingrediente'].'" type="button" class="btnEditar" >
+                        <a href="./updateIngrediente.php?id=' . $estoque['id_ingrediente'] . '" type="button" class="btnEditar" >
                           <i class="bi bi-pencil"></i>
                         </a>
                         <button class="btn-excluir">
@@ -169,7 +170,7 @@ if ($categoriaPrato == 'todos') {
 
         <div class="grid-cardapio">
           <?php
-          foreach ($pratos as $prato) {
+          foreach ($pratosTodos as $prato) {
             print '
                <div class="card-prato" data-categoria="pizzas">
                   <div class="foto-prato">
@@ -184,10 +185,10 @@ if ($categoriaPrato == 'todos') {
                     </div>
 
                     <div class="acoes-prato">
-                      <button type="button" class="btn-editar">
+                      <a href="./updatePrato.php?id=' . $prato['id_pratos'] . '" type="button" class="btnEditar">
                         <i class="bi bi-pencil"></i>
                         Editar
-                      </button>
+                      </a>
 
                       <button type="button" class="btn-excluir-prato">
                         <i class="bi bi-trash"></i>
@@ -295,24 +296,13 @@ if ($categoriaPrato == 'todos') {
             </div>
           </div>
 
-          <div class="linha-modal">
-            <div class="campo-modal">
-              <label for="quantidadeIngrediente">
-                Quantidade atual
-              </label>
+          <div class="campo-modal">
+            <label for="quantidadeIngrediente">
+              Quantidade atual
+            </label>
 
-              <input type="number" id="quantidadeIngrediente" name="quantidade" placeholder="Ex: 10" min="0" step="0.01"
-                required>
-            </div>
-
-            <div class="campo-modal">
-              <label for="estoqueMinimo">
-                Estoque mínimo
-              </label>
-
-              <input type="number" id="estoqueMinimo" name="estoque_minimo" placeholder="Ex: 5" min="0" step="0.01"
-                required>
-            </div>
+            <input type="number" id="quantidadeIngrediente" name="quantidade" placeholder="Ex: 10" min="0" step="0.01"
+              required>
           </div>
 
           <div class="campo-modal">
@@ -332,82 +322,6 @@ if ($categoriaPrato == 'todos') {
             <button type="submit" class="btn-salvar">
               <i class="bi bi-check-lg"></i>
               Adicionar Ingrediente
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- EDITAR INGREDIENTE -->
-    <div id="modalEditar" class="oculto modal">
-      <div class="modal-card">
-        <div class="modal-header">
-          <div>
-            <h2>Editar Ingrediente</h2>
-            <p>Atualize as informações do ingrediente</p>
-          </div>
-
-          <button type="button" id="fecharModalEditar" class="fechar-modal">
-            <i class="bi bi-x-lg"></i>
-          </button>
-        </div>
-
-        <form id="formEditar">
-          <div class="campo-modal">
-            <label for="nomeEditar">Nome do ingrediente</label>
-            <input type="text" id="nomeEditar" name="nome" placeholder="Ex: Tomate Pelado" required>
-          </div>
-
-          <div class="linha-modal">
-            <div class="campo-modal">
-              <label for="categoriaEditar">Categoria</label>
-              <select id="categoriaEditar" name="categoria" required>
-                <option value="">Selecione</option>
-                <option value="vegetais">Vegetais</option>
-                <option value="laticinios">Laticínios</option>
-                <option value="carnes">Carnes</option>
-                <option value="massas">Massas</option>
-                <option value="temperos">Temperos</option>
-                <option value="bebidas">Bebidas</option>
-                <option value="outros">Outros</option>
-              </select>
-            </div>
-
-            <div class="campo-modal">
-              <label for="unidadeEditar">Unidade</label>
-              <select id="unidadeEditar" name="unidade" required>
-                <option value="">Selecione</option>
-                <option value="kg">Kg</option>
-                <option value="g">Gramas</option>
-                <option value="l">Litros</option>
-                <option value="ml">Mililitros</option>
-                <option value="un">Unidade</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="linha-modal">
-            <div class="campo-modal">
-              <label for="quantidadeEditar">Quantidade atual</label>
-              <input type="number" id="quantidadeEditar" name="quantidade" placeholder="Ex: 10" min="0" step="0.01" required>
-            </div>
-
-            <div class="campo-modal">
-              <label for="estoqueMinimoEditar">Estoque mínimo</label>
-              <input type="number" id="estoqueMinimoEditar" name="estoque_minimo" placeholder="Ex: 5" min="0" step="0.01" required>
-            </div>
-          </div>
-
-          <div class="campo-modal">
-            <label for="observacaoEditar">Observação</label>
-            <textarea id="observacaoEditar" name="observacao" rows="3" placeholder="Alguma informação sobre este ingrediente..."></textarea>
-          </div>
-
-          <div class="acoes-modal">
-            <button type="button" id="cancelarModalEditar" class="btn-cancelar">Cancelar</button>
-            <button type="submit" class="btn-salvar">
-              <i class="bi bi-check-lg"></i>
-              Editar Ingrediente
             </button>
           </div>
         </form>
@@ -484,72 +398,6 @@ if ($categoriaPrato == 'todos') {
         </form>
       </div>
     </div>
-
-    <!-- MODAL: EDITAR PRATO -->
-    <div id="modalPratoEditar" class="oculto modal">
-      <div class="modal-card">
-
-        <div class="modal-header">
-          <div>
-            <h2>Editar Prato</h2>
-            <p>Altere os dados do prato do cardápio</p>
-          </div>
-
-          <button type="button" id="fecharModalPratoEditar" class="fechar-modal">
-            <i class="bi bi-x-lg"></i>
-          </button>
-        </div>
-
-        <form id="formPratoEditar">
-          <div class="campo-modal">
-            <label for="nomePratoEditar">Nome do prato</label>
-            <input type="text" id="nomePratoEditar" name="nome" placeholder="Ex: Spaghetti al Pomodoro" required>
-          </div>
-
-          <div class="linha-modal">
-            <div class="campo-modal">
-              <label for="categoriaPratoEditar">Categoria</label>
-              <select id="categoriaPratoEditar" name="categoria" required>
-                <option value="">Selecione</option>
-                <option value="entradas">Entradas</option>
-                <option value="massas">Massas</option>
-                <option value="pizzas">Pizzas</option>
-                <option value="sobremesas">Sobremesas</option>
-              </select>
-            </div>
-
-            <div class="campo-modal">
-              <label for="precoPratoEditar">Preço</label>
-              <input type="number" id="precoPratoEditar" name="preco" placeholder="0,00" step="0.01" min="0" required>
-            </div>
-          </div>
-
-          <div class="campo-modal">
-            <label for="descricaoPratoEditar">Descrição</label>
-            <textarea id="descricaoPratoEditar" name="descricao" placeholder="Descreva os ingredientes e detalhes do prato..." rows="4"></textarea>
-          </div>
-
-          <div class="campo-modal">
-            <label for="imagemPratoEditar">Imagem do prato</label>
-
-            <div class="upload-imagem">
-              <i class="bi bi-image"></i>
-              <span>Selecionar imagem</span>
-
-              <input type="file" id="imagemPratoEditar" name="imagem" accept="image/*">
-            </div>
-          </div>
-
-          <div class="acoes-modal">
-            <button type="button" id="cancelarModalPratoEditar" class="btn-cancelar">Cancelar</button>
-            <button type="submit" class="btn-salvar">
-              <i class="bi bi-check-lg"></i>
-              Salvar Alterações
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
   </main>
 
   <script>
@@ -607,62 +455,6 @@ if ($categoriaPrato == 'todos') {
 
       conteudo.classList.remove("fundo");
     }
-
-    // EDITAR INGREDIENTE
-
-    function abrirModalEditar() {
-      const modal = document.getElementById("modalEditar");
-      const conteudo = document.getElementById("conteudo");
-
-      modal.classList.remove("oculto");
-      modal.classList.add("visivel");
-      conteudo.classList.add("fundo");
-    }
-
-    function fecharModalEditar() {
-      const modal = document.getElementById("modalEditar");
-      const conteudo = document.getElementById("conteudo");
-
-      modal.classList.remove("visivel");
-      modal.classList.add("oculto");
-      conteudo.classList.remove("fundo");
-    }
-
-    document.getElementById("fecharModalEditar").addEventListener("click", fecharModalEditar);
-    document.getElementById("cancelarModalEditar").addEventListener("click", fecharModalEditar);
-
-    // EDITAR PRATO
-
-    const botoesEditarPrato = document.querySelectorAll(".btn-editar");
-    const botaoFecharPratoEditar = document.querySelector("#fecharModalPratoEditar");
-    const botaoCancelarPratoEditar = document.querySelector("#cancelarModalPratoEditar");
-
-    function abrirModalPrato() {
-      const modalPratoEditar = document.querySelector("#modalPratoEditar");
-      const conteudo = document.querySelector("#conteudo");
-
-      modalPratoEditar.classList.remove("oculto");
-      modalPratoEditar.classList.add("visivel");
-
-      conteudo.classList.add("fundo");
-    }
-
-    function fecharModalPrato() {
-      const modalPratoEditar = document.querySelector("#modalPratoEditar");
-      const conteudo = document.querySelector("#conteudo");
-
-      modalPratoEditar.classList.remove("visivel");
-      modalPratoEditar.classList.add("oculto");
-
-      conteudo.classList.remove("fundo");
-    }
-
-    botoesEditarPrato.forEach(function(botao) {
-      botao.addEventListener("click", abrirModalPrato);
-    });
-
-    botaoFecharPratoEditar.addEventListener("click", fecharModalPrato);
-    botaoCancelarPratoEditar.addEventListener("click", fecharModalPrato);
   </script>
 </body>
 

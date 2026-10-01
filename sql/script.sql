@@ -28,7 +28,7 @@ CREATE TABLE pratos (
     nome_prato VARCHAR(100) NOT NULL,
     num_prato INT NOT NULL,
     foto_prato VARCHAR(1000),
-    categoria VARCHAR(100),
+    categoria ENUM('Entradas', 'Massas', 'Pizzas', 'Sobremesas', 'Sobremesas', 'Bebidas', 'Principal') VARCHAR(100),
     preco DECIMAL(10, 2) NOT NULL,
     descricao VARCHAR(255) NOT NULL
 );

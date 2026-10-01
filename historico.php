@@ -18,82 +18,7 @@
     />
   </head>
   <body>
-    <section class="header">
-      <div class="top-header">
-        <div class="green">
-          <p>TRADIÇÃO, SABOR E PAIXÃO EM CADA DETALHE</p>
-        </div>
-
-        <div class="creme">
-          <img src="imagens/ornamento.png" alt="" role="presentation" />
-        </div>
-
-        <div class="red">BEM VINDO!</div>
-      </div>
-      <header>
-        <div class="logo">
-          <a href="#hero">
-            <img src="imagens/logo.png" alt="Luce d'Itália" />
-          </a>
-        </div>
-
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="header-list"
-        >
-          <i class="bi bi-list"></i>
-        </button>
-
-        <nav class="header-list" id="header-list">
-          <ul class="menu">
-            <li>
-              <a
-                class="<?= $paginaAtual === 'index.php' ? 'ativo' : '' ?>"
-                href="index.php"
-              >
-                Início
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="<?= $paginaAtual === 'cardapio.php' ? 'ativo' : '' ?>"
-                href="cardapio.php"
-              >
-                Cardápio
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="<?= $paginaAtual === 'reserva.php' ? 'ativo' : '' ?>"
-                href="reserva.php"
-              >
-                Reservas
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="<?= $paginaAtual === 'sobreNos.php' ? 'ativo' : '' ?>"
-                href="sobreNos.php"
-              >
-                Sobre Nós
-              </a>
-            </li>
-          </ul>
-
-          <div class="btn-header">
-            <a href="login.php">
-              <i class="bi bi-person"></i>
-              <p>ENTRAR</p>
-            </a>
-          </div>
-        </nav>
-      </header>
-    </section>
+    <?php require_once "partials/header.php" ?>
 
     <main id="historico">
       <section id="hero">
@@ -208,5 +133,7 @@
         </div>
       </section>
     </main>
+
+    <?php require_once "partials/footer.php" ?>
   </body>
 </html>
