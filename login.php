@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['nome'] = $user['nome'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['tipo'] = $user['tipo'];
+        $_SESSION['telefone'] = $user['telefone'];
 
         if ($user['tipo'] === 'admin') {
 

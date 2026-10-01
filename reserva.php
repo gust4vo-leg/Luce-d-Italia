@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+// print_r($_SESSION);
+
+// if (!$_SESSION) {
+//     header('location: ../login.php');
+//     exit;
+// }
+
 ?>
 
 <!DOCTYPE html>
@@ -146,7 +153,7 @@ session_start();
 
                             <div class="input-icon">
                                 <i class="bi bi-person"></i>
-                                <input type="text" name="nome" placeholder="Digite seu nome" required>
+                                <input type="text" name="nome" value="<?= isset($_SESSION['nome']) ? $_SESSION['nome'] : '' ?>" required>
                             </div>
                         </div>
 
@@ -156,7 +163,7 @@ session_start();
 
                                 <div class="input-icon">
                                     <i class="bi bi-envelope"></i>
-                                    <input type="email" name="email" placeholder="seu@email.com" required>
+                                    <input type="email" name="email" value="<?= isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>" required>
                                 </div>
                             </div>
 
@@ -164,7 +171,7 @@ session_start();
                                 <label>TELEFONE / WHATSAPP</label>
                                 <div class="input-icon">
                                     <i class="bi bi-telephone"></i>
-                                    <input type="tel" name="telefone" placeholder="(11) 99999-9999" required>
+                                    <input type="tel" name="telefone" value="<?= isset($_SESSION['telefone']) ? $_SESSION['telefone'] : '' ?>" required>
                                 </div>
                             </div>
                         </div>

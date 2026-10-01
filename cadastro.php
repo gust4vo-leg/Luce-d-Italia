@@ -1,8 +1,6 @@
 <?php
 require_once './crud.php';
 
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($_POST['senha'] === $_POST['confirmar']) {

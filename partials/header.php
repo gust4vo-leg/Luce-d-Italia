@@ -112,10 +112,6 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                 <aside id="sidebar" class="sidebar">
                     <div class="topo-sidebar">
                         <div class="perfil-sidebar">
-                            <img
-                                src="<?= $base ?>imagens/logo-perfil.png"
-                                alt="Foto de perfil"
-                                class="logo-sidebar">
                             <div>
                                 <h2>Meu Perfil</h2>
                                 <p>
@@ -145,14 +141,9 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                             Minhas Reservas
                         </a>
                     <?php elseif ($tipo_usuario === 'admin'): ?>
-                        <a href="pasta-admin/index.php">
+                        <a href="admin.php">
                             <i class="bi bi-speedometer2"></i>
                             Dashboard
-                        </a>
-
-                        <a href="pasta-admin/usuarios.php">
-                            <i class="bi bi-people"></i>
-                            Usuários
                         </a>
                     <?php endif; ?>
 
